@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology"
+<rdf:RDF xmlns="https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#"
      xml:base="https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:untitled-ontology-100="http://www.semanticweb.org/baharehzarei/ontologies/2023/0/untitled-ontology-100#">
+     xmlns:ReferenceOntology="https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#">
     <owl:Ontology rdf:about="https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology"/>
     
 
@@ -22,128 +22,128 @@
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasAnnotation -->
+    <!-- http://ReferenceOntology:hasAnnotation -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasAnnotation">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#API"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#SemanticAnnotation"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasAnnotation">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:API"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:SemanticAnnotation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOoutputSchema -->
+    <!-- http://ReferenceOntology:hasOoutputSchema -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOoutputSchema">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#OContent"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasOoutputSchema">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:OContent"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Schema"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOperations -->
+    <!-- http://ReferenceOntology:hasOperations -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOperations">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#API"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasOperations">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:API"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Operations"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOutput -->
+    <!-- http://ReferenceOntology:hasOutput -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOutput">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Output"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasOutput">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Operations"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Output"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOutputContent -->
+    <!-- http://ReferenceOntology:hasOutputContent -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasOutputContent">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Output"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#OContent"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasOutputContent">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Output"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:OContent"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasParameter -->
+    <!-- http://ReferenceOntology:hasParameter -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasParameter">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasParameter">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Operations"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Parameter"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasParameterSchema -->
+    <!-- http://ReferenceOntology:hasParameterSchema -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasParameterSchema">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasParameterSchema">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Parameter"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Schema"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasProperties -->
+    <!-- http://ReferenceOntology:hasProperties -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasProperties">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Property"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasProperties">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Schema"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Property"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasRBSchema -->
+    <!-- http://ReferenceOntology:hasRBSchema -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasRBSchema">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RBContent"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasRBSchema">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:RBContent"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Schema"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasRequestBody -->
+    <!-- http://ReferenceOntology:hasRequestBody -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasRequestBody">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RequestBody"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasRequestBody">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Operations"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:RequestBody"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasRequestBodyContent -->
+    <!-- http://ReferenceOntology:hasRequestBodyContent -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasRequestBodyContent">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RequestBody"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RBContent"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasRequestBodyContent">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:RequestBody"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:RBContent"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasSchemas -->
+    <!-- http://ReferenceOntology:hasSchemas -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasSchemas">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#API"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasSchemas">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:API"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Schema"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasServer -->
+    <!-- http://ReferenceOntology:hasServer -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasServer">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#API"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Servers"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:hasServer">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:API"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Servers"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#referesToSchema -->
+    <!-- http://ReferenceOntology:referesToSchema -->
 
-    <owl:ObjectProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#referesToSchema">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
-        <rdfs:range rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:ObjectProperty rdf:about="http://ReferenceOntology:referesToSchema">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Schema"/>
+        <rdfs:range rdf:resource="http://ReferenceOntology:Schema"/>
     </owl:ObjectProperty>
     
 
@@ -159,141 +159,141 @@
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasAssociatedConcept -->
+    <!-- http://ReferenceOntology:hasAssociatedConcept -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasAssociatedConcept">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#SemanticAnnotation"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:hasAssociatedConcept">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:SemanticAnnotation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasDescription -->
+    <!-- http://ReferenceOntology:hasDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasDescription">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:hasDescription">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Operations"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasDomain -->
+    <!-- http://ReferenceOntology:hasDomain -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasDomain">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#SemanticAnnotation"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:hasDomain">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:SemanticAnnotation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasMethod -->
+    <!-- http://ReferenceOntology:hasMethod -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasMethod">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:hasMethod">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Operations"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasPath -->
+    <!-- http://ReferenceOntology:hasPath -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasPath">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:hasPath">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Operations"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasURL -->
+    <!-- http://ReferenceOntology:hasURL -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#hasURL">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Servers"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:hasURL">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Servers"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#outputMediaType -->
+    <!-- http://ReferenceOntology:outputMediaType -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#outputMediaType"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:outputMediaType"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterDescription -->
+    <!-- http://ReferenceOntology:parameterDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterDescription">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:parameterDescription">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterLocation -->
+    <!-- http://ReferenceOntology:parameterLocation -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterLocation">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:parameterLocation">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterName -->
+    <!-- http://ReferenceOntology:parameterName -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterName">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:parameterName">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterType -->
+    <!-- http://ReferenceOntology:parameterType -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#parameterType">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:parameterType">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#propertyDescription -->
+    <!-- http://ReferenceOntology:propertyDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#propertyDescription">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Property"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:propertyDescription">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#propertyName -->
+    <!-- http://ReferenceOntology:propertyName -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#propertyName">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Property"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:propertyName">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#propertyType -->
+    <!-- http://ReferenceOntology:propertyType -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#propertyType">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Property"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:propertyType">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#requestBodyMediaType -->
+    <!-- http://ReferenceOntology:requestBodyMediaType -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#requestBodyMediaType">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RequestBody"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:requestBodyMediaType">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:RequestBody"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#schemaType -->
+    <!-- http://ReferenceOntology:schemaType -->
 
-    <owl:DatatypeProperty rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#schemaType">
-        <rdfs:domain rdf:resource="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:DatatypeProperty rdf:about="http://ReferenceOntology:schemaType">
+        <rdfs:domain rdf:resource="http://ReferenceOntology:Schema"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -310,69 +310,69 @@
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#API -->
+    <!-- http://ReferenceOntology:API -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#API"/>
+    <owl:Class rdf:about="http://ReferenceOntology:API"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#OContent -->
+    <!-- http://ReferenceOntology:OContent -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#OContent"/>
+    <owl:Class rdf:about="http://ReferenceOntology:OContent"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations -->
+    <!-- http://ReferenceOntology:Operations -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Operations"/>
+    <owl:Class rdf:about="http://ReferenceOntology:Operations"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Output -->
+    <!-- http://ReferenceOntology:Output -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Output"/>
+    <owl:Class rdf:about="http://ReferenceOntology:Output"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter -->
+    <!-- http://ReferenceOntology:Parameter -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Parameter"/>
+    <owl:Class rdf:about="http://ReferenceOntology:Parameter"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Property -->
+    <!-- http://ReferenceOntology:Property -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Property"/>
+    <owl:Class rdf:about="http://ReferenceOntology:Property"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RBContent -->
+    <!-- http://ReferenceOntology:RBContent -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RBContent"/>
+    <owl:Class rdf:about="http://ReferenceOntology:RBContent"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RequestBody -->
+    <!-- http://ReferenceOntology:RequestBody -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#RequestBody"/>
+    <owl:Class rdf:about="http://ReferenceOntology:RequestBody"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema -->
+    <!-- http://ReferenceOntology:Schema -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Schema"/>
+    <owl:Class rdf:about="http://ReferenceOntology:Schema"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#SemanticAnnotation -->
+    <!-- http://ReferenceOntology:SemanticAnnotation -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#SemanticAnnotation"/>
+    <owl:Class rdf:about="http://ReferenceOntology:SemanticAnnotation"/>
     
 
 
-    <!-- http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Servers -->
+    <!-- http://ReferenceOntology:Servers -->
 
-    <owl:Class rdf:about="http://https://vsr.informatik.tu-chemnitz.de/ontologies/Reference_ontology#Servers"/>
+    <owl:Class rdf:about="http://ReferenceOntology:Servers"/>
 </rdf:RDF>
 
 
