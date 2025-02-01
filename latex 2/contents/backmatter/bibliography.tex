@@ -1,0 +1,13 @@
+{
+	\setstretch{1.1}
+	\renewcommand{\bibfont}{\normalfont\small}
+	\setlength{\biblabelsep}{5mm}
+	\setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
+	%TODO - detect unused references / cites
+	%\nocite{*}
+	\printbibheading
+	\printbibliography[sorting=nyt,resetnumbers=true,notkeyword=online,notkeyword=standard,heading=subbibliography,title={Printed References}]
+	\printbibliography[sorting=nyt,keyword=standard,heading=subbibliography,title={Standards and Specifications}]
+	\printbibliography[sorting=nyt,keyword=online,notkeyword=standard,heading=subbibliography,title={Online References}]
+}
+\cleardoublepage

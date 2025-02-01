@@ -1,0 +1,267 @@
+\hypertarget{sec:introduction}{%
+\chapter{Introduction}\label{sec:introduction}}
+
+The topic of this thesis is the application of scientific approaches to lower the initial hurdle for \glspl{sme} to move from their existing non-\glslink{web}{web} desktop \glspl{Legacy System} to modern \glslink{web}{web}-based systems.
+The introduction motivates the need for a dedicated approach to address the initial unwillingness and resistance of these companies to commence a \gls{Web Migration}.
+High effort and risk due to the lack of a dedicated approach supporting the initial phase of a \gls{Web Migration} are identified as main challenges.
+This thesis contributes to the solution of these problems by providing a set of methods and technical infrastructure to support initiation of \gls{Web Migration}.
+
+\hypertarget{sec:situation}{%
+\section{Situation}\label{sec:situation}}
+
+\Gls{web}-based Systems (\glspl{Web System}) are widely used and familiar for users, as they offer significant advantages over traditional desktop applications such as instant deployment, a common standards-based target development platform and a high level of interactivity.
+\emph{\gls{Web Migration}} is a particular type of \emph{\gls{Software Migration}} - the process of moving an existing software system from one environment to another \autocite{SWEBOK2014} - moving a \emph{non-\glslink{web}{web} source system} to a \emph{\glslink{web}{web}-based target environment}.
+In terms of the joint \gls{iso}/\gls{iec} and \gls{ieee} 14764 standard for software maintenance \autocite{ISO/IEEE2006SoftwareLifeCycle}, it is \emph{adaptive and perfective maintenance} adapting software systems for \glslink{web}{web}-based environments and improving functionality and maintainability.
+Several related concepts exist in the context of \emph{\glslink{web}{web}-based environments}: \Gls{web} Sites, \glspl{Web Application}, \Gls{web} Services.
+Since \gls{Web Migration} research addresses different types of \glslink{web}{web}-based systems as migration targets, we use the term \emph{\gls{Web System}} as umbrella term following \autocite{Kienle2014EvolutionWeb} and adapting definitions from \autocite{Gaedke2000Diss,Kappel2006WebEngineering}
+
+\begin{thesisdefinition}{Web System}{def:websystem}
+A Web System is a software system based on technologies and standards of the \gls{w3c} that provides Web specific resources.
+\end{thesisdefinition}
+
+In contrast to this broad definition, we will use the term \gls{Web Application} for a specific type of \gls{Web System} that includes a \glslink{web}{web}-based user interface. \glspl{Web Application}, as defined by \citeauthor{Kappel2006WebEngineering}, are the main focus of this thesis as \glslink{target environment}{Web Migration target}:
+
+\begin{thesisdefinition}{Web Application \autocite{Kappel2006WebEngineering}}{def:webapplication}
+A Web Application is a software system based on technologies and standards of the World Wide Web Consortium (W3C) that provides Web specific resources such as content and services through a user interface, the Web browser.
+\end{thesisdefinition}
+
+One of the main characteristics of \gls{Web Engineering} - the application of systematic, disciplined and quantifiable approaches to development, operation, and maintenance of \glslink{web}{web}-based applications \autocite{Deshpande2002WebEngineering} - is the continuous evolution of \Gls{web} technologies \autocite{Gitzel2007WebEngineeringMDD}.
+Modern \glspl{Web Application} are the result of this evolution \autocite{Kienle2014EvolutionWeb} which started with the proposal of Hypertext as Information Management system by Tim Berners Lee in March 1989 \autocite{Berners-Lee1989}.
+Quickly evolving from the original textual content-focused system, the \Gls{web} started to be perceived as ``a universal, standards-based integration platform'' \autocite{Knorr2003WebAsPlatform}.
+Technologies for dynamic behavior on the client and server side led to the introduction of the term \emph{\gls{Web Application}}, formerly also called \glspl{ria}, indicating that their user experience became similar to that of \emph{desktop applications} \autocite{Kienle2014EvolutionWeb} (cf.~also to \gls{ria} features defined in \autocite{Rodriguez-Echeverria2012MIGRARIA}).
+Increased usage of dynamic content allowed users to use the \Gls{web} as mass collaboration system in the era referred to as \Gls{web} 2.0 in the mid-2000s \autocite{OReilly2007Web2.0}.
+
+Driven by a business perspective with a focus on envisioned cost savings and increased flexibility \autocite{Kienle2014EvolutionWeb}, composing applications from \emph{\Gls{web} Services}, i.e., reusable pieces of functionality invokable via \gls{http}, became a focus in both research and industry.
+The architectural paradigm of \gls{soa} \autocite{Oasis2006SOA} is closely related to this development and an ecosystem of \Gls{web} protocols such as \gls{wsdl} for describing the service interface \autocite{W3C2007WSDL2.0}, SOAP as messaging protocol \autocite{W3C2003SOAP} and BPEL for orchestrating \Gls{web} Services \autocite{OASIS2007BPEL} was created.
+
+The success of the \Gls{web} Service paradigm was continued in the advance of \emph{Cloud Computing}, allowing \glspl{Web System} to be built based on scaleable sets of rapidly provisioned, shared resources \autocite{NIST2011CloudComputing}.
+While the related service models of \gls{iaas} and \gls{paas} mainly influenced the architecture of \glspl{Web Application}, the \emph{\gls{saas}} paradigm also impacted end users' perception and expectations of software \autocite{BetterCloud2017SaaSWorkplace,Fowley2017CloudSME} allowing ubiquitous access without installation. \gls{saas} is the largest segment of the public cloud market with increasing tendency \autocite{Statista2018SaaSStatistics}.
+
+In a similar way, the high popularity and use of mobile devices \autocite{Statista2018MobileWeb} in private and work contexts has changed end users' expectations with regard to high levels of interactivity and social interactions \autocite{Bitkom2013Arbeit30}.
+This influenced \glspl{Web Application} in two ways: the need for open \glspl{api} for integration with third-party systems and along with it the creation of corresponding protocols like OAuth \autocite{Hardt2012Oauth2.0} and the requirement of flexible presentation layers capable of handling the vast amount of different screen sizes, resolutions and touch-based interactions giving rise to responsive design frameworks like Bootstrap\footnote{https://getbootstrap.com/}.
+
+The above evolution of \glspl{Web System} has brought various advantages over traditional desktop applications, such as:
+
+\begin{itemize}
+\tightlist
+\item
+  Standardized Target Development Platform
+\item
+  Instant Deployment
+\item
+  Low Access Requirements
+\item
+  High level of Interactivity and Social Interactions
+\end{itemize}
+
+In contrast to the wide range of proprietary technologies and frameworks for traditional desktop applications \autocite{Puder2004a}, \glspl{Web Application} enable companies to focus on one single target development platform based on \emph{open standards}.
+This significantly reduces the development workload required to provide software for many different platforms on many different devices, since only one version of the software based on one set of technologies is needed \autocite{OReilly2007Web2.0}.
+Additional effort and cost reductions are achieved by only requiring one development infrastructure and set of tools, as opposed to the platform-wise toolchains (e.g., compilers, IDEs) of desktop applications.
+\emph{Open \Gls{web} Standards} like \gls{http}, \gls{html}, \gls{css} and JavaScript form the core of \glspl{Web Application}.
+They are standardized, published and continuously updated by international standardization bodies like \gls{ieee} and \gls{w3c} and can be publicly accessed and used without restrictions.
+Therefore, the risk of technology deprecation is significantly lower than for proprietary desktop application technologies.
+Development staff needs only be trained on one technological base and can be hired from a potentially more extensive group of developers with experience in \Gls{web} technologies\footnote{cf.~https://insights.stackoverflow.com/survey/2019}.
+
+The \Gls{web}'s underlying client-server architecture allows for \emph{instant deployment} by enabling to perform updates in one place \autocite{Gitzel2007WebEngineeringMDD}, the server:
+directly, if the locus of code execution is on the server side, or indirectly, if the locus of code execution is on the client side and the code is distributed via the server.
+The ability to instantly deploy new versions is of great advantage for companies since it allows for shorter development cycles and thus faster reactions on changing or new requirements and reduced time-to-market \autocite{Khadka2014ProfessionalsModernization,Fowley2017CloudSME}.
+
+From the end users' perspective, \glspl{Web Application} impose \emph{low requirements for accessing software} compared to desktop applications.
+According to \autocite{BetterCloud2017SaaSWorkplace}, 86\% of end users find \gls{saas} applications help them succeed more than desktop alternatives.
+They can be used from any system with a \Gls{web} browser.
+No installation is required, reducing time and complexity for users.
+The browser has become a \emph{standard interface} \autocite{Aversano2001} / \emph{standard client} \autocite{Gitzel2007WebEngineeringMDD} for many users to access software.
+\Gls{web} browsers are available for almost any device and platform used by end users.
+The resulting high \emph{application portability} \autocite{Gitzel2007WebEngineeringMDD} fosters a ubiquity of software that allows for new work patterns like home office \autocite{Bitkom2013Arbeit30} (cf.~\emph{SaaS-Powered Workplace}, 38\% of companies almost entirely running on \gls{saas} as of 2017 according to \autocite{BetterCloud2017SaaSWorkplace}).
+The lower complexity and effort gives software companies the chance to address potentially larger users bases \autocite{ForresterResearch2011Modernization}.
+
+In particular, \emph{social interactions} in potentially large user bases have become widespread in \glspl{Web Application} for end users, allowing the formation of instant online communities \autocite{Bressler2000OnlineCommunities}. These are advantageous for companies through higher levels of user engagement \autocite{Bressler2000OnlineCommunities}.
+Social information sharing is advantageous also in working contexts (cf.~\emph{Shareconomy} \autocite{Bitkom2013Arbeit30}).
+
+On the technological level, this is enabled by two main factors.
+The use of URLs as uniform handles for addressing \Gls{web} resources and application states enables quick sharing of arbitrary \gls{Web Application} contents and has seen deep integration into modern platforms, e.g., sharing functionalities of mobile operating systems, and applications, e.g., link-based sharing in most \gls{saas} applications such as Dropbox, Office365 or GitHub.
+The availability of \glspl{api} for third-party developers and corresponding \Gls{web} protocols like OAuth allow easier integration with other \glspl{Web Application}.
+
+Due to these advantages, \glspl{Web Application} are becoming dominant over desktop applications, with new software being built as \glspl{Web Application} \autocite{BetterCloud2017SaaSWorkplace} and existing software being replaced by \glspl{Web Application} \autocite{Gartner2012SaaSSurvey}.
+A survey of 50 Italian companies identified the \Gls{web} as the main target of migration activities \autocite{Torchiano2008ItalianSurvey}.
+From a business perspective, the aforementioned cloud computing paradigm of \gls{saas} has seen the most interest \autocite{Statista2018SaaSStatistics}.
+While \gls{saas} comprises more aspects than software architecture and is thus not a synonym for \glspl{Web Application}, the shift from traditional on-premise software to \gls{saas}-based cloud software is closely related to \glspl{Web Application}. The required interfaces and communication are mostly implemented using standard \Gls{web} protocols, and most \gls{saas} solutions are accessed via \gls{http} and use browsers as clients.
+Thus, the subsequent \gls{saas}-related studies are also indicative of tendencies of usage of traditional on-premise desktop applications in comparison to \glspl{Web Application}.
+
+The total size of the public cloud \gls{saas} market was already 91.75 billion USD worldwide in 2016 \autocite{Statista2018SaaSMarketSize} and is growing \autocite{Statista2018SaaSMarketSize,BetterCloud2017SaaSWorkplace,Chan2018SaaSStatistics}
+The cloud shift rate of the \gls{saas} market in 2016 to 2020 is growing three times faster than \gls{paas} and two times faster than \gls{iaas} \autocite{BetterCloud2017SaaSWorkplace}.
+The number of \gls{saas} applications that organizations use is rising, and many companies will be running purely on \gls{saas} soon \autocite{BetterCloud2017SaaSWorkplace}.
+Software vendors react to these developments by no longer building traditional on-premise software.
+The vast majority of end users consider \gls{saas} applications more helpful than desktop alternatives \autocite{BetterCloud2017SaaSWorkplace}.
+Existing solutions are becoming not only extended by but increasingly replaced with \gls{saas} solutions \autocite{Gartner2012SaaSSurvey}.
+Shifting away from the above business perspective towards evidence from end users, studies show that acceptance of \glspl{Web Application} is high even in traditional sectors like banking.
+For instance, online banking is well-established for internet users in Germany \autocite{BitkomResearch2016DigitalBanking}.
+
+\hypertarget{motivation}{%
+\section{Motivation}\label{motivation}}
+
+Despite the widespread use and familiarity of \glspl{Web Application} for end users and their advantages over traditional desktop applications as described above, there are still many \emph{non-\glslink{web}{web} \glspl{Legacy System}} and \glslink{Software Modernization}{modernization} remains an essential topic in the industry \autocite{Batlajery2014IndustrialSurveyModernization,Khadka2014ProfessionalsModernization,Gartner2013CIOAgenda,Gartner2013Priorities,NASCIO2016,ForresterResearch2011Modernization}.
+
+\emph{\glspl{Legacy System}} and \gls{Legacy Modernization} have been an interest for research for a long time.
+Several definitions exist in literature.
+An overview can be found in \autocite{Wagner2014}.
+In this thesis, we follow the original definition of Brodie and Stonebaker \autocite{Brodie1995Migrating}:
+
+\begin{thesisdefinition}{Legacy System \autocite{Brodie1995Migrating}}{def:legacysystem}
+Any systems that cannot be modified to adapt to continually changing business requirements and their failure can have a severe impact on business.
+\end{thesisdefinition}
+
+These \glspl{Legacy System} are characterized as follows: \glspl{Legacy System} are \emph{business critical}, i.e., they represent great value for the company due to the vast amount of \emph{knowledge} about business processes, rules, etc.
+\autocite{Aversano2001,Sneed2010SoftwareMigration,Wagner2014} resulting from high investments \autocite{Lucia2009METAMORPHOS} and generate a lot of revenue (considered as ``cash cows'' \autocite{Khadka2014ProfessionalsModernization}).
+This value can only be preserved through migration into new technological environments \autocite{Fuhr2013SOAMIG}.
+\glspl{Legacy System} \emph{resist modification} and evaluation \autocite{Bisbal1999LegacyInformationSystems}.
+\glspl{Legacy System} are \emph{poorly documented} or have a complete lack of documentation \autocite{Sneed2010SoftwareMigration,warren2012renaissance,Batlajery2014IndustrialSurveyModernization,Lucia2008}.
+There is a \emph{lack of experienced workforce} in the company which developed the system \autocite{Batlajery2014IndustrialSurveyModernization} due to changes or retirement of the original staff \autocite{Lucia2008}.
+\glspl{Legacy System} are \emph{based on obsolete technologies} that are incompatible with current/future technological environments and potentially discontinued \autocite{Perez-Castillo2013PRECISO,Batlajery2014IndustrialSurveyModernization,Heil2016AWSM}.
+\glspl{Legacy System} are \emph{too rigid to comply with new business requirements} \autocite{Batlajery2014IndustrialSurveyModernization}.
+
+While the above characteristics cause high effort for maintenance and implementation of new requirements, many \glspl{Legacy System} still exist in the industry \autocite{Fuhr2013SOAMIG}.
+The main reason for their existence is their business-critical role for the company.
+Surveys \autocite{Khadka2014ProfessionalsModernization,Batlajery2014IndustrialSurveyModernization} show that they are perceived as stable, reliable, proven technology and performance-optimized.
+Respondents answers indicate a tendency towards the ``never touch a running system'' mindset \autocite{Batlajery2014IndustrialSurveyModernization}.
+
+\Gls{Legacy Modernization} is continuously among the top ten technology priorities for CIOs \autocite{Gartner2013CIOAgenda}, at position 5 in both industry \autocite{Gartner2013Priorities} and public sector \autocite{NASCIO2016}, with the adoption of cloud computing ranked third \autocite{Gartner2013Priorities,NASCIO2016} and mobile second \autocite{Gartner2013Priorities}, with high expectations \autocite{ForresterResearch2011Modernization}.
+
+Closely related to the topic of \glspl{Legacy System}, \emph{\gls{Technical Debt}} attracts increasing attention in academia and industry \autocite{Li2015TDSMS,Yli-Huumo2016TD}.
+Initially coined by Ward Cunningham in 1992 \autocite{Cunningham1992TD}, the \gls{Technical Debt} metaphor describes the negative impacts of \gls{Legacy System} characteristics in the long term in analogy to financial debts.
+A recent definition agreed upon by researchers and practitioners in the 2016 Dagstuhl Seminar ``Managing Technical Debt in Software Engineering'' is:
+
+\begin{thesisdefinition}{Technical Debt \autocite{Avgeriou2016TD}}{def:technicaldebt}
+Technical debt is a collection of design or implementation constructs that are expedient in the short term but set up a technical context that can make future changes more costly or impossible.
+\end{thesisdefinition}
+
+Studies over large repositories of software from different domains determine the average \gls{Technical Debt} per line of code at 3.61 USD, meaning that larger systems with more than 300KLOC accrue more than 1 million USD of \gls{Technical Debt}.
+\autocite{CAST2011} Less conservative estimates on the same repository reach more than 15 USD per line of code \autocite{Curtis2012EstimatingTD}.
+\gls{Technical Debt} results from intentional and unintentional \emph{violations} of good architectural and coding practices which are likely to cause operational problems like outages, security breaches or which contribute to high costs of ownership, e.g.~when implementing changes \autocite{Curtis2012EstimatingTD}.
+It has two components, the cost of fixing these violations - called \emph{principal} - and the continuing costs of leaving violations unfixed - called \emph{interest}.
+In \glspl{Legacy System}, the old technology still in use can be seen as \gls{Technical Debt} \autocite{Yli-Huumo2016TD}.
+While \gls{Technical Debt} is not the focus of this thesis, the metaphor characterizes \glspl{Legacy System} and helps to understand better the motivation to modernize legacy software.
+
+\hypertarget{sec:problem}{%
+\section{Problem Statement}\label{sec:problem}}
+
+Making a transition from non-\glslink{web}{web} \glspl{Legacy System} to \glslink{web}{web}-based systems is desirable for companies due to the advantages of the \Gls{web} platform and shortcomings of existing systems detailed above.
+What is more, this is ``widely recognized as a must for keeping competitive in the dynamic business world'' \autocite{Aversano2001} to be able to keep pace with changing user expectations and be able to implement new requirements \autocite{Fuhr2013SOAMIG,Lucia2008}.
+
+Commencing a \gls{Web Migration} is hard, however.
+The above reports on \gls{Software Modernization} indicate that companies are still struggling to modernize their \glspl{Legacy System} and there are still many non-\glslink{web}{web} \glspl{Legacy System} in existence.
+Both the business and technical perspective make \glslink{Software Modernization}{modernization} difficult \autocite{Khadka2014ProfessionalsModernization}.
+\emph{Effort} and \emph{risk} \autocite{Khadka2014ProfessionalsModernization,Canfora2000Decomposing,Bisbal1999LegacyInformationSystems,Heil2018ReWaMP} are rendering companies hesitant to commence a \gls{Web Migration}.
+
+\emph{Effort} \autocite{ISO/IEEE24765Vocabulary} for \glslink{Software Modernization}{modernization} comprises not only direct development activities, but also managing the modernization project and training users on the new systems \autocite{ISO/IEEE2006SoftwareLifeCycle,Sneed2010SoftwareMigration,Seacord2003ModernizingLS}.
+Even case studies conducted to demonstrate the efficiency of proposed \glslink{Software Modernization}{modernization} approaches required one person-year or longer.
+For instance, \citet{Distante2006CaseStudy} report 12+ PM for one project (112 KLOC, medium-sized, Visual Basic), \citet{Bernhart2012} 18+ PM (250 KLOC COBOL), \citet{Aversano2001} 8PM (130 KLOC COBOL) and \citet{Maenhaut2015} report about 14 PM
+for two projects.
+Modernization effort is influenced by the complexity of the legacy architecture \autocite{Khadka2014ProfessionalsModernization} and the decomposability \autocite{Aversano2001,Lucia2006,Brodie1995Migrating}.
+\emph{Resistance from within the organization} \autocite{Sneed2010ReMiP} is another factor influencing effort, with the unwillingness of staff to share knowledge and resistance towards change in general and new technologies, in particular, requiring good communication of the necessity and benefits of \glslink{Software Modernization}{modernization} \autocite{Khadka2014ProfessionalsModernization}.
+According to Gartner, ``Cultural issues are at the root of many failed business transformations'' \autocite{Gartner2016Culture}.
+
+Modernizing \glspl{Legacy System} involves high \emph{risk} \autocite{ISO/IEEE24765Vocabulary,Khadka2014ProfessionalsModernization,Canfora2000Decomposing,Bisbal1999LegacyInformationSystems,Seacord2003ModernizingLS,Heil2018ReWaMP}.
+Uncertainty of success makes companies hesitant to start projects.
+The risk of failure in \glslink{Software Modernization}{modernization} projects is high \autocite{Gartner2014ModernizationFailure,ForresterResearch2011Modernization} due to feasibility threats like lack of experienced staff for \glslink{Software Modernization}{modernization} itself \autocite{Sneed2010SoftwareMigration,Seacord2003ModernizingLS} and for \Gls{web} development and due to the complexity of the \gls{Legacy System} \autocite{Khadka2014ProfessionalsModernization}.
+Modernization poses the risk of \emph{loss of knowledge} \autocite{Khadka2014ProfessionalsModernization}.
+Existing \glspl{Legacy System} represent valuable knowledge about business processes, rules, etc.
+\autocite{Aversano2001,Sneed2010SoftwareMigration,Wagner2014} often resulting from years of requirements elicitation and experience.
+However, similar to \emph{tacit knowledge} in organizations which is not expressed explicitly but guides human behavior \autocite{Nonaka2008TacitKnowledge}, the knowledge in \glspl{Legacy System} is not explicitly documented but governs how they operate.
+Thus, \glslink{Software Modernization}{modernization} bears the risk of losing this valuable knowledge \autocite{Khadka2014ProfessionalsModernization}.
+\emph{Desirability} of \glslink{Software Modernization}{modernization} can be uncertain for companies because it is difficult to predict the acceptance of the new system by customers, the utility and usability of a \glslink{web}{web}-based solution and the overall Return on Invest \autocite{Khadka2014ProfessionalsModernization}.
+
+Similar to \autocite{Razavian2013PHD} for SOA Migration, we observed that \gls{Web Migration} is considered sufficiently addressed in academia, but practitioners still face difficulties to commence a \gls{Web Migration} project.
+Surveys show that the majority of the industry does not use academic resources for modernization \autocite{Batlajery2014IndustrialSurveyModernization}.
+Many existing migration approaches do not sufficiently address the above problems by supporting companies in the initial phase (cf.~analysis of phase support in our survey \autocite{Heil2017Survey}), often assuming that the decision to modernize is already taken.
+
+\hypertarget{sec:scope}{%
+\section{Scope}\label{sec:scope}}
+
+Thus, this thesis is dedicated to the research question:
+
+\subsubsection*{Research Question RQ1}
+\begin{quote}
+How to support software companies to commence \gls{Web Migration}?
+\end{quote}
+
+This guiding \emph{central research question} \autocite{Creswell2014ResearchDesign} was used for ideation using the \emph{How Might We} method from the \gls{hcd} design kit \autocite{HCD2015} as described in detail in section \cref{sec:research-process}
+The re-formulation of RQ1 into ``\emph{How might we support companies to commence \gls{Web Migration}?}'' has helped us create a solution consisting of the three core contributions as outlined in the following.
+RQ1 defines the scope of this thesis.
+The following related research questions are considered out of its scope:
+
+\begin{itemize}
+\tightlist
+\item
+  The thesis does not consider purely technical transformations between programming languages.
+While there is a large body of work available in the field of program transformation, fully automatic transformation on the code level \autocite[cf.~family F1 in][]{Razavian2013PHD} has shown not sufficient for complex real-world systems when also a change of the basic paradigm is involved, e.g., from procedural to object-oriented \autocite{Sneed2010SoftwareMigration}, which is valid for \gls{Web Migration}.
+Instead, reengineering \autocite{ISO/IEEE24765Vocabulary,IEEE1219Maintenance} supported by tools and knowledge extracted from the \gls{Legacy System} is required.
+\item
+  Database Migration is a related but distinct field of research with a large body of research focusing on migration from Relational to NoSQL databases \autocite{Karnitis2015,Zhao2014a,Rocha2015RelationalNoSQL} in particular in the context of Cloud \autocite{Strauch2013}, from databases to XML \autocite{Li2014,Tzvetkov2005} and to Semantic Web \autocite{Vavliakis2013,Vavliakis2011,XuanFan2010}.
+Unlike, e.g.~changes in the user interface, these \glslink{Software Modernization}{modernizations}, are not a necessary consequence or pre-requisite of \gls{Web Migration}.
+If they have to be undertaken, this should not be done at the same time as \gls{Web Migration}.
+This thesis focuses only on \glslink{Software Modernization}{modernization}s that are required by the change into a \glslink{web}{web}-based environment.
+\item
+  This thesis does not address the \glslink{Software Modernization}{modernization} of business processes \autocite[cf.~ADM Business Domain modernization@Perez-Castillo2011KDM; and family F3 in][]{Razavian2013PHD}.
+While the thesis does address the business perspective of \gls{Web Migration} by supporting migration decision making and therefore changes in the business model, changes in business processes in order to optimize them or align them for a service-oriented architecture \autocite{Razavian2013PHD,Razavian2010SAPIENSA,Nguyen2009} are not addressed.
+Optimization of business processes represents a \glslink{Software Modernization}{modernization} that is not a consequence or pre-requisite of \gls{Web Migration} and should, therefore, be conducted separately.
+A SOA is not the specific target architecture of this thesis, and therefore business process modifications towards SOA are not addressed.
+\item
+  \gls{Technical Debt} is part of the motivation of this thesis as it constitutes an important reason why \glspl{Legacy System} need to be modernized, but this thesis does not directly address its identification \autocite{Li2015TDSMS}, estimation \autocite{Curtis2012EstimatingTD} and management \autocite{Yli-Huumo2016TD,Li2015TDSMS}.
+The methodology presented in this thesis does indirectly affect \gls{Technical Debt} in two ways.
+The knowledge recovery reduces \gls{Technical Debt} by identification and management of valuable knowledge from the \gls{Legacy System}, facilitating program understanding for maintenance and reducing the risk of changing the code.
+The \gls{Web Migration} per se introduces a change of technology towards open \Gls{web} standards replacing legacy technology which is part of \gls{Technical Debt} \autocite{Yli-Huumo2016TD}.
+These two indirect effects are a consequence of the overlap of \gls{Web Migration} with \glslink{Software Modernization}{modernization}.
+An overview of research directly addressing \gls{Technical Debt} can be found in \autocite{Li2015TDSMS}.
+\end{itemize}
+
+\Cref{fig:modernization-migration} shows \gls{Web Migration}, \gls{Software Modernization} and their relation to the above out-of-scope topics.
+
+\begin{figure}
+\hypertarget{fig:modernization-migration}{%
+\centering
+\includegraphics[width=0.75\textwidth]{../figures/modernization-migration.pdf}
+\caption{\gls{Web Migration} and Related Topics as Venn Diagram}\label{fig:modernization-migration}
+}
+\end{figure}
+
+\hypertarget{contributions}{%
+\section{Contributions}\label{contributions}}
+
+To answer RQ1, we define an approach for lowering the initial hurdle for commencing a \gls{Web Migration} project by providing processes, models, and tools that address the initial fears and resistance outlined above.
+This approach is \gls{awsm} (Agile Web Migration for \glspl{sme}) \autocite{Heil2016AWSM}.
+\gls{awsm} provides three core contributions:
+
+\begin{itemize}
+\tightlist
+\item
+  \gls{awsm} allows to identify and maintain existing valuable knowledge through crowdsourced concept assignment supported by a \glslink{web}{web}-based annotation platform.
+\item
+  \gls{awsm} minimizes risk through migration pilots and demonstrates desirability and feasibility of a potential \glslink{web}{web}-based version of the \gls{Legacy System} applying the \gls{Rapid Prototyping} paradigm to \gls{Web Migration}.
+\item
+  \gls{awsm} allows controlling the impact of \gls{Web Migration} on customers through measuring visible changes.
+\end{itemize}
+
+\hypertarget{structure-of-this-thesis}{%
+\section{Outline}\label{structure-of-this-thesis}}
+
+The rest of this thesis is organized as follows: \cref{sec:requirements-analysis} introduces a motivation scenario based on experience from a three-years industrial research project in the context of which the research presented in this thesis was conducted, and it elicits six requirements based on scenario and stakeholder characteristics.
+In \cref{sec:sota}, the state of the art in the field of \gls{Web Migration} is reviewed with regard to the requirements and shortcomings of existing approaches are discussed.
+\Cref{sec:solution} reports on the design method and research process of the solution presented in this thesis.
+Based on systematic, detailed problem analysis, the solution and research design are derived, and an overview of the principles, formalisms, and methods of the \gls{awsm} Methodology and tools of the \gls{awsm} Platform is given.
+The following three chapters are dedicated to the techniques and tools of the three methods of the \gls{awsm} Methodology.
+\Cref{sec:awsm-re} describes the reverse engineering method based on concept assignment that allows to recover and manage valuable knowledge in legacy codebases integrated with ongoing development processes and environment and supported by \gls{Crowdsourcing}.
+\Cref{sec:awsm-rm} presents the risk management method based on \gls{Rapid Prototyping} which enables to quickly demonstrate feasibility and desirability of a \glslink{web}{web}-based version of the \gls{Legacy System} with limited resources and web engineering expertise supported by a guided transformation process.
+\Cref{sec:awsm-ci} provides the customer impact method based on visual user interface analysis that facilitates the computation of measurements estimating the perceptual empirical similarity between legacy and \Gls{web} user interface tailored to the characteristics of the target user group to control customer impact of \gls{Web Migration}.
+The overall evaluation is reported in \cref{sec:evaluation}.
+\Cref{sec:conclusion} summarizes the contributions of this thesis and concludes with indications of further research directions.
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+This chapter has introduced \glspl{Web System} in general and \glspl{Web Application} in particular as widely used and accepted software solutions due to their advantages over traditional desktop software.
+It motivated the thesis by showing that any \glslink{Software Modernization}{modernization} of existing \glspl{Legacy System} is hard due to their specific characteristics.
+In spite of the notion that \gls{Web Migration} is sufficiently addressed in academia, many companies are still struggling to commence \gls{Web Migration} due to concerns about effort and risk and dedicated approaches addressing these concerns in the initial phases of \gls{Web Migration} are scarce.
+From this, the central research question of this thesis, ``How to support software companies to commence \gls{Web Migration}?'', was derived and the scope of this thesis was defined.
+The chapter provided an outline of the main research contributions and the structure of the thesis.
+The following chapter further explores the defined problem domain through analysis of a motivation scenario and elicitation of requirements for a suitable \gls{Web Migration} approach addressing RQ1.

@@ -1,0 +1,4 @@
+https://yuml.me/edit/06a112e5
+
+
+[Annotation]<>oa:hasTarget-1[SpecificResource|oa:hasSource: URI], [SpecificResource]<>oa:hasSelector-[TextPositionSelector|oa:start: xsd:nonNegativeInteger;oa:end: xsd:nonNegativeInteger],[Annotation]<>oa:hasBody-[Feature], [Annotation]<>oa:hasBody-[DomainKnowledge], [DomainKnowledge]^-[BusinessProcess], [DomainKnowledge]^-[Rule], [DomainKnowledge]^-[Deployment], [DomainKnowledge]^-[Persistence], [DomainKnowledge]^-[Configuration], [DomainKnowledge]^-[Explanatory], [DomainKnowledge]^-[Algorithm]

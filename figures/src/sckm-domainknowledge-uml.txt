@@ -1,0 +1,3 @@
+http://yuml.me/edit/00d03e32
+
+[Feature]^-[UserStory], [Feature]^-[Scenario], [Feature]^-[UseCase], [DomainKnowledge]^-[SolutionDomainKnowledge], [DomainKnowledge]^-[ProblemDomainKnowledge],[SolutionDomainKnowledge]^-[Presentation], [SolutionDomainKnowledge]^-[Persistence], [SolutionDomainKnowledge]^-[Algorithm], [SolutionDomainKnowledge]^-[Configuration], [SolutionDomainKnowledge]^-[Deployment], [SolutionDomainKnowledge]^-[Explanatory], [ProblemDomainKnowledge]^-[BusinessProcess], [ProblemDomainKnowledge]^-[BusinessRule]

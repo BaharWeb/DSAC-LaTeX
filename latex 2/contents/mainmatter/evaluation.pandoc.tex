@@ -1,0 +1,171 @@
+\hypertarget{sec:evaluation}{%
+\chapter{Evaluation}\label{sec:evaluation}}
+
+This chapter evaluates the AWSM Methodology and Platform according to the requirements stated in \cref{sec:requirements}.
+This assessment is followed by a comparison to the state of the art in terms of benefits and weaknesses.
+
+\hypertarget{requirements-evaluation}{%
+\section{Requirements Evaluation}\label{requirements-evaluation}}
+
+In the following, the AWSM Methodology and Platform are assessed with regard to the scope and stakeholder requirements of this thesis.
+
+\hypertarget{scope-requirements}{%
+\subsection{Scope Requirements}\label{scope-requirements}}
+
+The following scope requirements are evaluated to determine to what extent the AWSM Methodology and Platform address the scope set by the main research question RQ1, i.e.~to what extent it is a web migration approach supporting the initial phase of a web migration and having web applications as target architecture.
+
+\textbf{S1 Initial Phase}
+
+The AWSM Methodology and Platform dedicatedly addresses the initial phase of web migration prior to actual transformation and beyond knowledge recovery through AWSM:RM.
+The risk management method based on rapid web migration prototyping specifies a set of activities that are to be executed even before the final decision whether to migrate to the web or not has been made.
+In this early pre-migration phase, AWSM:RM addresses the communication of necessity and benefits of a web migration through transfer of the rapid prototyping paradigm into the web migration domain.
+In this way, the AWSM:RM method and ReWaMP/RWMPA and UI Transformer toolchain facilitate creation of web migration prototypes as concrete, tangible demonstrative products contributing to making the migration business case and as a vehicle for communication across stakeholders serving as a basis for decision making.
+Furthermore, the S2DCS \cref{sec:s2dcs} facilitates web migration strategy selection, a crucial activity in the initial phase, based on data from systematic mapping study comprising scientific publications and software tools.
+According to the assessment scheme, the requirement is fully fulfilled.
+
+\textbf{S2 Web Application Target}
+
+The AWSM Methodology and Platform has web applications according to \autocite{def:webapplication} as target architecture.
+AWSM target systems are web systems, communicating via HTTP and based on W3C standards like HTML, CSS, WASM that provide content and services through a web-based user interface.
+This can be seen in the architecture of AWSM:RM prototypes and the analysis of web user interfaces in AWSM:CI.
+The target web-based user interfaces are not mere wrappers, but real WUIs, implemented in HTML, CSS, JS and are run independently of their legacy counterparts.
+They feature important web paradigms, like asynchronous request-response communication, spatial and technological client-server separation and URL-based navigation of resources.
+As web applications are created based on existing non-web legacy systems in web migration, AWSM:CI does support joint analysis of non-web and web-based user interface through a computer-vision based approach operating on visual features at a cross-platform level of abstraction, enabling consideration of target web applications with regard to UI similarity with their legacy counterparts.
+Furthermore, also the tools of the AWSM Platform itself are implemented based on open web standards (cf.~principle P1).
+According to the assessment scheme, the requirement is fully fulfilled.
+
+\hypertarget{stakeholder-requirements}{%
+\subsection{Stakeholder Requirements}\label{stakeholder-requirements}}
+
+The following stakeholder requirements are evaluated to assess appropriateness of the AWSM Methodology and Platform for the characteristics of an independent software vendor as detailed in \cref{sec:scenario}.
+
+\textbf{C1 Risk management}
+
+The AWSM Methodology and Platform provides risk management methods beyond basic feasibility-centric approaches through its AWSM:RE and AWSM:RM methods.
+AWSM:RE specifies a concept-assignment-based knowledge recovery approach which addresses the risk of losing knowledge implicitly represented by the legacy source code during web migration.
+The systematic application of AWSM:RE reverse engineering extracts knowledge from the source code and maintains it for further management and usage in an interoperable way based on the SCKM formalism and a queryable web standards-based knowledge representation.
+Following AWSM principle P4, AWSM:RM specifies a rapid-prototyping-based method for creating demonstrative web migration prototypes that allows for identification of migration process and migration result risks.
+The produced web migration prototypes and gained migration experience not only provide insights on the technical feasibility, but they also represent a concrete and tangible contribution towards the web migration business case: they allow assessing the plausibility and thus desirability of a potential web-based version of the legacy system which enables an informed balancing of potential business value and cost.
+According to the assessment scheme, the requirement is fully fulfilled.
+
+\textbf{C2 Re-use of legacy assets}
+
+The AWSM Methodology and Platform addresses re-use of legacy assets at three different levels, covering the model, view and controller layers of an application: AWSM:RE focuses on re-use on the model and requirement level, AWSM:RM on the business logic and UI level and AWSM:CI on the view and user interaction level.
+In this way, the three AWSM methods establish continuity of functionality (AWSM:RE and AWSM:RM) and of user interaction (AWSM:RM and AWSM:CI) across legacy and target web system.
+The re-use of legacy models and requirements is achieved through AWSM:RE by reverse engineering these assets implicitly represented in the codebase into explicit artifacts thus enabling their re-use in both model-driven and non-model-driven subsequent processing.
+The re-use of business logic and the user interface is achieved through AWSM:RM by semi-automatic (ReWaMP) / automatic (UI Transformer) transformation based on legacy code artifacts.
+The re-use of view layout and user interaction is achieved through AWSM:CI by enabling a joint analysis of legacy and web user interfaces based on corresponding user interface artifacts.
+The KDM-based Legacy System, SCKM and Legacy User Interface formalisms provide the conceptual foundation of re-use in AWSM.
+According to the assessment scheme, the requirement is fully fulfilled.
+
+\textbf{C3 Expertise \& Tool Support}
+
+The AWSM Methodology and Platform addresses expertise and tool support requirements through its method design integrating the non-functional expertise requirement for all three AWSM methods and the tools of the AWSM Platform respectively.
+AWSM:RE addresses the expertise requirement by reusing program comprehension results from ongoing forward engineering and by automatic decomposition of concept assignment into microtasks solved using crowd expertise.
+AWSM:RE tool support comprises the annotation tool, its CSRE extension and the tools for integration with ongoing development.
+AWSM:RM addresses the expertise requirement by enabling business logic reuse based on existing staff expertise in the legacy platform supported by the ReWaMP toolchain, lowering the required web engineering and migration expertise demand through its semi-automatic process supported by the extensive RWMPA guidance and avoiding web engineering requirements for UI creation through the fully automatic UI Transformer without manual interventions.
+AWSM:CI addresses the expertise requirement by specifying calibratable similarity measures that can be computed and empirically adjusted by existing ISV staff with basic statistics expertise based on automated visual UI Element detection and with non-expert test subjects form the target group.
+The AWSM Platform provides tool support for all three AWSM methods enabling semi-automatic or automatic processes, fulfilling the tool aspect of the requirement.
+As AWSM cannot entirely avoid expertise demand in new areas, but is still feasible with existing staff, the expertise aspect of the requirement is conditionally met.
+Thus, the overall requirement is assessed as half fulfilled, acknowledging that web migration activities can hardly be conducted without any additional expertise requirements.
+
+\textbf{C4 Agile Development Process Integration}
+
+The AWSM Methodology and Platform addresses development process integration through its method design specifying the conceptual integration of each AWSM method into ongoing development activities and the integration support tools of the AWSM Platform.
+AWSM principle P2 avoids specification of a stand-alone process, the three AWSM methods targeting the initial phase can be integrated easier than full-coverage web migration approaches.
+AWSM principle P3 facilitates integration with a variety of different model-driven or non-model-driven development processes.
+AWSM:RE integrates with ongoing development through continuous reverse engineering, embedding concept assignment with forward engineering in the comprehension phase, re-using the mental representation.
+This is supported by the IDE integration tool.
+AWSM:RE integrates web migration project management is integrated with software project management via the migration package/migration backlog formalism and the corresponding project management tool integration.
+AWSM:RM integrates with ongoing development through transfer of the rapid prototyping paradigm into the web migration domain, embedding AWSM:RM activities with ongoing explorative or experimental prototyping, with resulting web migration prototypes as product increments achievable within one Scrum sprint.
+AWSM:CI integrates with ongoing development in the context of software quality measurements and user interface design activities within ongoing forward engineering UIX analysis and approval activities of a dedicated team of UIX experts.
+As AWSM specifies integration with ongoing development for all three methods but introduces activities and artifacts that, depending on the maturity of the ongoing forward development process, can be new, the development process integration is conditionally met.
+Thus, the overall requirement is assessed as half fulfilled, acknowledging that web migration activities can hardly be entirely integrated with ongoing forward development.
+
+\cref{tbl:AWSM-eval} shows the overall evaluation results of AWSM.
+
+\hypertarget{tbl:AWSM-eval}{}
+\begin{longtable}[]{@{}llllll@{}}
+\caption{\label{tbl:AWSM-eval}AWSM Evaluation}\tabularnewline
+\toprule
+S1 Initial & S2 Web & C1 Risk & C2 Reuse & C3 Exp & C4 Agile\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+S1 Initial & S2 Web & C1 Risk & C2 Reuse & C3 Exp & C4 Agile\tabularnewline
+\midrule
+\endhead
+\CIRCLE & \CIRCLE & \CIRCLE & \CIRCLE & \LEFTcircle & \LEFTcircle\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{comparison-with-state-of-the-art}{%
+\section{Comparison with State of the Art}\label{comparison-with-state-of-the-art}}
+
+\todo{TODO:COMPARISON\_TABLE}
+
+\todo{TODO:REF\_TABLE shows AWSM in comparison to the approaches assessed in }\cref{sec:approaches}.
+With regard to support of the initial phase, AWSM is among the very few to fully address this requirement.
+Similar to AWS Migration and SMART, AWSM has a dedicated focus on the phases prior to migration, but it is not limited to planning, providing concrete solutions for Legacy and Requirements Analysis, Target Design and Implementation covering Configuration \& Change Management, Migration Environment and Staff Qualification \cref{tbl:awsm-remip}.
+Unlike SMART, AWSM addresses the communication of benefits of web migration through demonstration of desirability and unlike ARTIST with tangible means.
+All three AWSM methods contribute to the migration decision point, as specified in AWS Migration, ARTIST, REMICS, SMART and SAPIENSA, and integration of the rapid web migration prototyping method has been defined in \cref{sec:rm.integration}.
+AWSM's S2DCS supports the Strategy Selection \autocite{Sneed2010ReMiP} which is an important step in the initial phase with a faceted search interface over a database of 122 approaches and tools.
+This is only addressed in the meta-approaches of AWS Migration and SMART, S2DCS provides a concrete decision support in contrast to the abstract guidelines in AWSM Migration and SMART.
+
+AWSM belongs to the group of web migration approaches with a target architecture of a web application, covering all three layers of a typical three-tier-architecture, in particular including consideration of the web-based user interface.
+This consideration is also found in REMICS, CloudMIG, IC4, Migraria and MigraSOA an UWA/UWAT+.
+REMICS, CloudMIG and IC4 focus on a cloud-based backend, Migraria and MigraSOA are WSE approaches where the source system is already a web system.
+REMICS, CloudMIG and UWA/UWAT+ are model-driven approaches with user interaction focused transformations of the presentation model, IC4 targeting SaaS implies a web-based UI but does not provide concrete technique descriptions.
+In contrast, AWSM is model-driven agnostic (cf.~principle P3), and defined for non-web legacy systems towards web applications according to \autocite{def:webapplication}, which can be cloud-based SaaS systems, but also distributedly hosted intra-net applications based on web technologies and hybrid cloud applications.
+
+Regarding risk management, the web migration prototypes of AWSM:RM fulfill a similar function like migration pilots in several approaches like AWS Migration, REMICS, SMART, IC4, however, AWSM emphasises the value of demonstration of desirability in addition to technical feasibility and unlike these approaches, AWSM:RM provides concrete and comprehensive techniques for the rapid creation of web migration prototypes.
+Risk management is only fully addressed by three other web migration approaches: SMART, serviciFi and ARTIST.
+Similar to AWSM, the SMART methodology comprises several techniques for risk management, including feasibility assessment, an incremental process model and migration pilots, so the complimentary risk management techniques of AWSM:RM can be easily integrated with SMART.
+The serviciFi approach manages risk through a combined analysis of technical feasibility and economical viability using portfolio analysis.
+The cost-benefit map is based on return on investment estimates considering maintenance cost and business value in relation to market needs.
+In contrast, AWSM:RM provides not only a proof of technical feasibility, but also a more concrete demonstration of business value and plausibility of a web-based solution which, combined with information recovered through AWSM:RE can be used to enhance the portfolio analysis technique of serviciFi.
+ARTIST's technical and economic feasibility assessment can benefit from integration of AWSM:RM in a similar way.
+Similar to ARTIST, AWSM uses extensive knowledge recovery to address the risk of knowledge loss.
+While AWSM is agnostic to the specific nature of target knowledge representations, enabled by AWSM's KDM-based SCKM and the queryable knowledge representation of AWSM:RE, ARTIST's extensive model-driven knowledge recovery can be supported by AWSM:RE as described in \cref{sec:re.conceptual.integration}.
+
+Re-use of functionality is expectedly high across all web migration approaches --- all approaches but AWS Migration and PRECISO feature functionality re-use --- as this is a definitive property of any software migration approach.
+The distinctive property is re-use-based continuity of user interaction.
+AWSM addresses re-use on all three application layers as outlined above in order to maintain functionality and user interaction.
+A similarly high level of re-use is observed mainly in encapsulation approaches (Marchetto2008, AMS, NCHC, MELIS, M\&S SW, CelLest, DAS) due to their web migration without modernization nature \cref{sec:sota.discussion} and WSE approaches (MIGRARIA, MigraSOA) which already start with a web-based source system.
+Only one other transformation approach, TUIMigrate, and one reengineering approach, UWA/UWAT+, also achieves a full rating for re-use.
+TUIMigrate, in contrast to AWSM, focuses on text-based terminal user interfaces.
+Thus achieving continuity in user interaction and a similar layout is simpler, but comes at the cost of emulating an outdated terminal-based interaction in the web browser.
+AWSM, in contrast, addresses user interface continuity in AWSM:RM and AWSM:CI for graphical user interfaces both on source and target side of the migration.
+The conceptual user centred modelling of UWA/UWAT+ is the closest to AWSM in its emphasis on user interface continuity.
+While UWA/UWAT+ focuses on similarity in the Task and Behaviour dimension, based on model-based hypermedia re-design of business process tasks into content navigation models, AWSM focuses on the Layout dimension.
+Thus, UWA/UWAT+ and AWSM are complimentary and can be integrated in the context of web migration towards a model-driven UWA-based architecture.
+The other comprehensive web migration approaches like REMICS and ARTIST are falling behind with regard to re-use, as they only consider re-use of functionality, but can be easily extended with AWSM techniques due to their methodological framework structures.
+The integration of AWSM:CI with UWA/UWAT+, REMICS and ARTIST is described in \cref{sec:ci.integration}.
+
+With regard to expertise and tool support, AWSM only receives a half rating, conceding that in spite of the extensive tool support of the AWSM platform, the web migration activities of the AWSM methods can hardly be conducted without any additional expertise requirements.
+In contrast, several nine web migration approaches received a full rating.
+However, Marchetto2008, Gaps2Ws, PRECISO, AMS, NCHC, M\&S SW and DAS are encapsulation approaches that cannot be considered equivalent full web migration approaches targeting real web applications independent of the source system.
+Thus the mainly tool-based wrapper approaches pose low expertise requirements.
+The same holds for TUIMigrate due to its focus on terminal user interface migration.
+The SMART methodology outperforms AWSM in terms of expertise requirements due to its simple, well-defined process and activities along with comprehensive templates, guidance documentation and tools.
+This advantage, however, is to be seen in the light of SMART's different scope limiting its applicability as described for other requirements above.
+Expectedly, AWSM outperforms the comprehensive web migration approaches like REMICS, ARTIST and UWA/UWAT+ with regard to expertise requirements.
+This, however, has to be considered with the same fairness regarding their significantly wider and more complete scope: while AWSM aims at providing a methodology and platform addressing shortcomings of existing web migration approaches, REMICS, ARTIST and UWA/UWAT+ aim at specifying complete web migration approaches at the extent of comprehensive EU-funded research projects.
+Interestingly, the IC4 approach was designed for a very similar SME-sized ISV stakeholder like AWSM, but according to the assessment scheme is rated lower than AWSM due to the required manual reengineering and lack of tool support.
+
+Integration of web migration activities and artifacts into ISV's ongoing agile development was observed the requirement hardest to achieve in \cref{sec:approaches}.
+While 22 out of 23 assessed approaches do not address this requirement, defining web migration activities and artifacts in an isolated, stand-alone process manner, only REMICS agile extensions define a mapping of REMICS to Scrum that, even though not explicitly mentioned, facilitates integration with ongoing agile development.
+AWSM consistently specifies integration for all three methods of the AWSM Methodology and the AWSM Platform provides several dedicated integration tools.
+Yet, the development process integration requirement is only conditionally met as the measurement activities and artifacts of AWSM:CI can only be integrated straight-forward, if the ongoing agile development process already makes use of differential software quality measurements between user interfaces.
+Due to this restriction, AWSM is rated equal to REMICS, but higher than all 22 other approaches which ignore the integration aspect as important factor of facilitating web migration initiation for SME-sized ISVs.
+
+As shown in \todo{TODO:REF\_TABLE}, in spite of its limitations in two of the four stakeholder requirements with SHOULD-priority, AWSM's overall assessment is higher than any existing web migration approach.
+This holds for both the summative and average scoring\footnote{based on a mapping \(S\) of the three possible ratings as follows: \Circle \(\mapsto\) 0, \LEFTcircle \(\mapsto\) 0.5, \CIRCLE \(\mapsto\) 1}, where AWSM (\(\Sigma=5\), \(\overline S=0.833\)) is rated higher than the top-ranking approaches in \cref{sec:approaches} SMART (\(\Sigma=3.5\), \(\overline S=0.583\)), REMICS (\(\Sigma=3\), \(\overline S=0.5\)), ARTIST (\(\Sigma=3\), \(\overline S=0.5\)) and UWA/UWAT+ (\(\Sigma=2.5\), \(\overline S=0.417\)).
+AWSM, however, does not directly compete with complete migration processes as defined for instance by REMICS, ARTIST or UWA/UWAT+.
+Instead, similar to SMART, AWSM is a \emph{complimentary methodology} providing a set of principles, formalisms and methods supported by the tools of the AWSM Platform which address aspects of web migration which have received little to no attention in existing complete approaches.
+It is therefore meant to be used in conjunction with one of the complete web migration approaches as suitable for the concrete migration situation and environment (specific target architecture, available resources, model-driven or non-model-driven development process etc.), selected e.g.~through S2DCS, which defines the overall migration procedure \cref{fig:methods-techniques-tools}.
+This usage intention is visible in the AWSM principles, the method's design and the consistent specification of integration for the most relevant and comprehensive web migration approaches of all three AWSM methods.
+
+\hypertarget{summary}{%
+\section*{Summary}\label{summary}}
+\addcontentsline{toc}{section}{Summary}

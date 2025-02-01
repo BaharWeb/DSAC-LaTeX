@@ -1,0 +1,358 @@
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[
+	configurebiblatex=true,
+	bibstyle=authoryear,
+	bibsorting=nyt,
+	bibsys=biber,
+	figuresep=colon,
+	sansserif=false,
+	hangfigurecaption=false,
+	hangsection=false,
+	hangsubsection=false,
+	colorize=bw,
+	bibfile=thesis,
+]{cleanthesis}
+\usepackage{amssymb}                    % some missing math symbols
+\usepackage{amsmath}                    % improved math environment
+\usepackage{cleveref}                   % add context-specific names before reference, e.g., Figure or Section
+\usepackage{lipsum}                     % fill text
+\usepackage{totcount}										% counter / amount
+\usepackage{fmtcount}										% word for number, e.g., eleven for 11
+\usepackage{booktabs}					          % better tables
+\usepackage[acronym,symbols,toc,nonumberlist]{glossaries}    % acronym handling and listing, nonumberlist --> no page references in glossary list
+\usepackage[obeyFinal,prependcaption,textsize=tiny]{todonotes}                  % in-document task management, disable all via [disable]
+\usepackage{xspace}                     % spacing
+\usepackage{listings}                   % illustration of source code snippets
+\usepackage[                            % algorithm environment
+  algochapter,
+  ruled, 
+  vlined, 
+  linesnumbered
+]{algorithm2e}
+%\usepackage{algpseudocode}	%from algorithmcx, supports multi-page algorithm breaking
+\let\counterwithout\relax
+\let\counterwithin\relax
+\usepackage{chngcntr}
+
+% new environments, e.g., scenario
+%\usepackage{ntheorem}
+%\let\proof\relax
+%\let\endproof\relax
+\usepackage{amsthm}
+%\usepackage{thmtools}
+
+% date and time
+\usepackage[num,american]{isodate}
+
+% remove left space wrt list of listings and list of algorithms
+\makeatletter
+\renewcommand*\l@lstlisting{\@dottedtocline{1}{0em}{3.2em}}
+\renewcommand*\l@algocf{\@dottedtocline{1}{0em}{3.2em}}
+\makeatother
+
+% remove trailing dot for subsubsection
+\renewcommand{\thesubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+% for listings of items
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=-2ex}
+
+% Seb Packages
+\usepackage{subfig}
+\usepackage{wasysym}
+\usepackage{ltablex} %longtable functionality in tabularx
+%\usepackage{auto-pst-pdf}
+\usepackage[twoside, figuresright]{rotating} % sidewaysfigure, sidewaystable etc.
+% A4Setting uncomment following
+\usepackage{parskip}% better inter-paragraph spacing
+%\usepackage{xurl}%improved line-breaking of urls
+%\usepackage{xargs} %Use more than one optional parameter in a new commands
+\usepackage[dvipsnames]{xcolor} %colored text etc.
+\usepackage{colortbl}
+\usepackage{makecell} %multi-lined tabular environments
+\usepackage{bm} %bold maths symbols
+\usepackage{lscape} %landscape
+\usepackage{xltabular} %table, long
+%\usepackage[tableposition=top]{caption}
+%\captionsetup{justification   = centering,
+              %singlelinecheck = false,
+              %format=hang}
+%\usepackage[bitstream-charter]{mathdesign}		% use different font for math symbols
+%\usepackage{pdfpages}
+%Original Geometry Settings
+%\usepackage[a5paper,bindingoffset=10mm,%
+ %           left=15mm,right=15mm]{geometry}
+% A4Setting
+%GEOMETRY Settings of Titelei
+%\RequirePackage[        % page layout modifications
+%  paper=a5paper,        %   - use A4 paper size
+%  nohead,               %   - no header
+%  includefoot,          %   - include footer space
+%  bindingoffset=0.0cm,  %   - binding correction
+%  top=2.5cm,            %   - total body: top margin
+%  left=2.5cm,           %   - total body: left margin (odd pages)
+%  right=1.5cm,          %   - total body: right margin (odd pages)
+%  bottom=1.0cm,         %   - total body: bottom margin
+%  footskip=1.8cm,       %   - footer skip size
+%]{geometry}
+
+
+%\usepackage[ %3mm Beschnitt für Univerlag Druck
+	% frame,
+%	width=154truemm, % 148mm + 2*3mm 
+%	height=216truemm, % 210mm + 2*3mm
+%	center
+%]{crop}
+
+%\usepackage[showrefs,showcites,msgs]{refcheck} % check references (label, cite etc.)
+
+% footnote numbering beyond chapter scopes
+\counterwithout{footnote}{chapter}
+
+% lookup for figures in this directory (do not need to specify path when including ics)
+\graphicspath{{figures/}}
+
+% enable to reference algorithms
+\crefname{algocf}{algorithm}{algorithms}
+\crefname{lstlisting}{listing}{listings}
+
+% adjusted theorem environment
+%\declaretheoremstyle[
+%notefont=\bfseries, notebraces={}{},
+%bodyfont=\normalfont,
+%headformat=\NAME~\NUMBER:\NOTE]{nopar}
+%\theoremseparator{.}
+%\theorembodyfont{\normalfont}
+%\theorempostskip{\topsep}
+\newtheoremstyle{mythmstyle}
+  {5pt}{5pt}{\normalfont}{0pt}{\bfseries}{.}{5pt plus 1pt minus 1pt}
+  {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}
+\theoremstyle{mythmstyle}
+
+% enable to reference definitions
+%\newtheorem{definition}{Definition}
+%\crefname{definition}{Definition}{Definitions}
+%\regtotcounter{definition}
+
+% configure todo notes
+\presetkeys{todonotes}{inline}{}
+\let\oldMissingfigure\missingfigure
+\let\oldTodo\todo
+%\renewcommand{\todo}[1]{\oldTodo[linecolor=red,backgroundcolor=red!25,bordercolor=red]{\thechapter{}. #1}}
+\renewcommand{\missingfigure}[1]{\oldMissingfigure{\thechapter{}. #1}}
+
+
+\renewcommand{\lstlistlistingname}{List of Listings}
+
+
+% definition of commonly used abbreviations like e.g., i.e., etc.
+\newcommand*{\eg}{e.g.,\@\xspace}
+\newcommand*{\ie}{i.e.,\@\xspace}
+\newcommand*{\cf}{cf.\@\xspace}
+\newcommand*{\etal}{et~al.\@\xspace}
+\newcommand*{\etc}{etc.\@\xspace}
+
+% seb consistent writing definitions
+\newcommand*{\knowledgebase}{knowledge base\@\xspace}
+\newcommand*{\awsmknowledgebase}{Knowledge Base\@\xspace}
+\newcommand*{\cpp}{C\texttt{++}\@\xspace}
+\newcommand*{\webbased}{\glslink{web}{Web}-based\@\xspace}
+\newcommand*{\legacy}{\glslink{Legacy System}{legacy}\@\xspace}
+\newcommand*{\web}{\gls{web}\@\xspace}
+
+
+% circled number
+\newcommand{\numbercircled}[1]{\textcircled{\raisebox{-0.9pt}{#1}}}
+
+% citein for "<authors> in <reference>"
+\newcommand{\citein}[1]{\citeauthor{#1}~in~\cite{#1}}
+
+%Seb Definitions
+\newcounter{sebdefctr}
+\newenvironment{thesisdefinition}[2]{%
+	\refstepcounter{sebdefctr}% increment the environment's counter
+	\hypertarget{#2}{%
+		\subsubsection*{Definition \thesebdefctr:\@\xspace #1}\label{#2}}%
+		\begin{quote}}{%
+		\end{quote}} %
+\crefname{sebdefctr}{Definition}{Definitions}
+
+\newcounter{sebrqctr}
+\renewcommand{\thesebrqctr}{RQ\arabic{sebrqctr}}
+\newenvironment{researchquestion}[1]{%
+	\refstepcounter{sebrqctr}% increment the environment's counter
+	\hypertarget{#1}{%
+		\subsubsection*{Research Question \thesebrqctr}\label{#1}}%
+		\begin{quote}}{%
+		\end{quote}} %
+\crefname{sebrqctr}{}{}
+
+\newcounter{sebogctr}
+\renewcommand{\thesebogctr}{OG}
+\newenvironment{overarchinggoal}[1]{%
+	\refstepcounter{sebogctr}% increment the environment's counter
+	\hypertarget{#1}{%
+		\subsubsection*{Overarching Research Goal \thesebogctr}\label{#1}}%
+		\begin{quote}}{%
+		\end{quote}} %
+\crefname{sebogctr}{}{}
+
+\newcounter{sebroctr}
+\renewcommand{\thesebroctr}{RO\arabic{sebroctr}}
+\newenvironment{researchobjective}[1]{%
+	\refstepcounter{sebroctr}% increment the environment's counter
+	\hypertarget{#1}{%
+		\subsubsection*{Research Objective \thesebroctr}\label{#1}}%
+		\begin{quote}}{%
+		\end{quote}} %
+\crefname{sebroctr}{}{}
+
+\newcounter{sebprictr}
+\renewcommand{\thesebprictr}{P\arabic{sebprictr}}
+\newenvironment{thesisprinciple}[2]{%
+	\refstepcounter{sebprictr}% increment the environment's counter
+	\hypertarget{#2}{%
+		\subsubsection*{Principle \thesebprictr\@\xspace #1}\label{#2}}%
+    }{%
+    } %
+\crefname{sebprictr}{}{}
+
+\newcounter{sebsreqctr}
+\renewcommand{\thesebsreqctr}{S\arabic{sebsreqctr}}
+\newenvironment{thesisscoperequirement}[2]{%
+  \refstepcounter{sebsreqctr}% increment the environment's counter
+  \hypertarget{#2}{%
+    \subsubsection*{\thesebsreqctr\@\xspace #1}\label{#2}}%
+    }{%
+    } %
+\crefname{sebsreqctr}{}{}
+
+\newcounter{sebcreqctr}
+\renewcommand{\thesebcreqctr}{C\arabic{sebcreqctr}}
+\newenvironment{thesisstakeholderrequirement}[2]{%
+  \refstepcounter{sebcreqctr}% increment the environment's counter
+  \hypertarget{#2}{%
+    \subsubsection*{\thesebcreqctr\@\xspace #1}\label{#2}}%
+    }{%
+    } %
+\crefname{sebcreqctr}{}{}
+
+\newcounter{sebgapctr}
+\renewcommand{\thesebgapctr}{G\arabic{sebgapctr}}
+\newenvironment{gap}[2]{%
+  \refstepcounter{sebgapctr}% increment the environment's counter
+  \hypertarget{#2}{%
+    \subsubsection*{\thesebgapctr\@\xspace #1}\label{#2}}%
+    }{%
+    } %
+\crefname{sebgapctr}{}{}
+
+% commonly used proper names (to avoid typos and enable smart completion)
+\newcommand{\sociddea}{Sociddea\@\xspace}
+
+% pandoc related commands
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% set level of numbering of sections and in toc
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
+
+% definition of code fragments
+\lstnewenvironment{code}[1][]%
+  {\noindent\minipage{\linewidth}
+   \lstset{basicstyle=\ttfamily\footnotesize,frame=single,rulecolor=\color{ctcolorgray},numbers=left,numberstyle=\scriptsize\color{ctcolorgray},#1}}
+  {\endminipage}
+  
+\lstdefinelanguage{turtle}
+{
+    columns=fullflexible,
+    keywordstyle=\bfseries,
+    morekeywords={@prefix,@base,@forSome,@forAll,@keywords},
+    tabsize=4,
+    alsoletter={-?}, % allowed in names
+    morecomment=[l][\itshape\color{black}]{\#\#},
+    basicstyle=\ttfamily\color{black},
+    %numberstyle=\color{black},
+    morestring=[b][\color{black}]\",
+    breaklines=true,
+    postbreak=\mbox{$\hookrightarrow$\space},
+}
+\lstdefinelanguage{swrl}
+{
+    columns=fullflexible,
+    keywordstyle=\bfseries,
+    morekeywords={->\^}, %TODO:^
+    tabsize=4,
+    alsoletter={-?>}, % allowed in names
+    basicstyle=\ttfamily\color{black},
+    %numberstyle=\color{black},
+    morestring=[b][\color{black}]\",
+    breaklines=true,
+    postbreak=\mbox{$\hookrightarrow$\space},
+}  
+
+\lstdefinelanguage{sparql}
+{
+    columns=fullflexible,
+    keywordstyle=\bfseries,
+    morekeywords={FILTER}, %TODO:^
+    tabsize=4,
+    morecomment=[l][\color{black}]{\#},
+    basicstyle=\ttfamily\color{black},
+    %numberstyle=\color{black},
+    morestring=[b][\color{black}]\",
+    breaklines=true,
+    postbreak=\mbox{$\hookrightarrow$\space},
+} 
+
+\lstdefinelanguage{JavaScript}{
+  morekeywords=[1]{break, continue, delete, else, for, function, if, in,
+    new, return, this, typeof, var, void, while, with, document},
+  % Literals, primitive types, and reference types.
+  morekeywords=[2]{false, null, true, boolean, number, undefined,
+    Array, Boolean, Date, Math, Number, String, Object},
+  % Built-ins.
+  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
+  sensitive,
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morecomment=[s]{/**}{*/}, % JavaDoc style comments
+  morestring=[b]',
+  morestring=[b]"
+}[keywords, comments, strings] 
+  
+
+% define bibliography filters and add sources
+\defbibfilter{meAuthor}{\keyword{meAuthor} \and \not \keyword{meFirstAuthor}}
+\defbibfilter{meFirstAuthor}{\keyword{meFirstAuthor}}
+%
+%
+%
+\defbibfilter{standards}{\keyword{standard}}
+%
+%\DeclareDelayedFloatFlavor{sidewaystable}{table}
+%
+% 
+%\setlength{\baselineskip}{1pt}
+%
+%
+%
+%
+\hypersetup{backref=false,pagebackref=false}
+%
+% A4Setting
+%\setlength{\textheight}{157mm} %210mm - 25mm - 28mm
+%\setlength{\footskip}{10mm} %28mm - 18mm
+
+% A4Setting
+%\setlength{\footskip}{157pt} %185
+% hyperref draft mode or final mode
+
+%Avoid two lines breaking to new page
+\widowpenalties=3 10000 10000 150
+
+\hypersetup{final}

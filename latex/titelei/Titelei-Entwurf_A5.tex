@@ -1,0 +1,202 @@
+% 1.10.2020
+
+\documentclass[a5paper,10pt,openright,twoside]{article}
+
+\usepackage{ifluatex}
+% deutsche Silbentrennung und Umlaute
+\usepackage[ngerman]{babel}
+\usepackage{enumerate}
+\usepackage{ragged2e}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{listings}
+%\usepackage{hyperref}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{microtype}
+
+% Kodierung von Umlauten auch als Umlaute im PDF
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{extsizes}
+\usepackage{newtxtext,newtxmath}
+\usepackage{xifthen}
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+\RequirePackage[        % page layout modifications
+  paper=a5paper,        %   - use A4 paper size
+  nohead,               %   - no header
+  includefoot,          %   - include footer space
+  bindingoffset=0.0cm,  %   - binding correction
+  top=2.5cm,            %   - total body: top margin
+  left=2.5cm,           %   - total body: left margin (odd pages)
+  right=1.5cm,          %   - total body: right margin (odd pages)
+  bottom=1.0cm,         %   - total body: bottom margin
+  footskip=1.8cm,       %   - footer skip size
+]{geometry}
+
+\parindent0mm
+
+% bei Schriftenreihen ist die Variable "schriftenreihe" auf true zu setzen,
+% sonst auf false
+\newboolean{schriftenreihe}
+%\setboolean{schriftenreihe}{false}
+\setboolean{schriftenreihe}{true}
+
+% Angabe der CC-Lizenz (CC BY, CC BY-SA)
+% vorzugsweise sollte CC BY verwendet werden
+\newcommand{\cclizenz}{ccby}
+% alternativ wird CC BY-SA akzeptiert
+%\newcommand{\cclizenz}{ccbysa}
+
+\begin{document}
+
+\begingroup
+\pagestyle{empty}
+
+% Titelseite von Hand
+% Autor
+Sebastian Heil
+
+\vspace*{5mm}
+
+% Titel
+% Titelwörter nicht trennen
+Web Migration Revisited:  Addressing Effort and Risk Concerns
+
+\newpage
+
+% folgende Angabe nur bei Bänden, die innerhalb von Schriftenreihen erscheinen;
+% Einzelpublikationen enthalten auf dieser Seite keinen Text
+\ifthenelse{\boolean{schriftenreihe}}{
+%Wissenschaftliche Schriftenreihe\\
+\textbf{Doctoral Dissertations in Web Engineering and Web Science}
+%
+%\vspace*{4mm}
+
+Volume 5
+
+\vspace*{4mm}
+
+Prof. Dr.-Ing. Martin Gaedke (Series Editor)}{\mbox{}}
+
+\newpage
+
+\begin{large}
+\begin{center}
+
+\begin{minipage}[t][50mm][t]{\textwidth}
+\begin{center}
+
+% Autor
+Sebastian Heil
+
+\vspace*{7mm}
+
+% Titel
+% Titelwörter nicht trennen
+\textbf{\Large Web Migration Revisited}
+
+\vspace*{1cm}
+
+% eventueller Zusatz
+% Titelwörter nicht trennen
+Addressing Effort and Risk Concerns
+
+\end{center}
+\end{minipage}
+
+\vfill
+
+% Logo
+\includegraphics[width=0.5\textwidth]{TU_Chemnitz_positiv_schwarz.pdf}
+
+\vspace*{5mm}
+
+% Verlagsangabe und Erscheinungsjahr
+\textbf{Universitätsverlag Chemnitz\\
+2021}
+
+\end{center}
+\end{large}
+
+\newpage
+
+\begin{small}
+% Impressum
+\textbf{Impressum}\\
+
+\textbf{Bibliografische Information der Deutschen Nationalbibliothek}\\
+
+% keine Worttrennung in den Eigennamen "Deutsche Nationalbibliothek" sowie
+% "Deutsche Nationalbibliografie"
+Die Deutsche Nationalbibliothek verzeichnet diese Publikation in der Deutschen\\Nationalbibliografie; detaillierte bibliografische Angaben sind im Internet über
+\\ \url{https://www.dnb.de} abrufbar.\\
+
+% CC-Lizenz: passendes Logo und passenden Text einbinden
+\vspace*{8mm}
+\ifthenelse{\equal{\cclizenz}{ccby}}{
+% CC BY
+\includegraphics[width=2.5cm]{cc_by.png}
+
+Das  Werk - ausgenommen Zitate, Cover, Logo TU Chemnitz und Bildmaterial im
+Text - steht unter der Creative-Commons-Lizenz\\
+Namensnennung 4.0 International \mbox{(CC BY 4.0)}\\
+\url{https://creativecommons.org/licences/by/4.0/deed.de}\\[1ex]}{
+% CC BY-SA
+\includegraphics[width=2.5cm]{cc_by_sa.png}
+
+Das Werk - ausgenommen Zitate, Cover, Logo TU Chemnitz und Bildmaterial im
+Text - steht unter der Creative-Commons-Lizenz\\
+Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International \mbox{(CC BY-SA 4.0)}\\
+\url{https://creativecommons.org/licences/by-sa/4.0/deed.de}\\[1ex]}
+
+\vspace*{3mm}
+
+% Copyright-Angaben
+\begin{tabbing}
+Satz/Layout: \= Sebastian Heil \kill	
+Titelgrafik: \> Sebastian Heil \\
+Satz/Layout: \> Sebastian Heil \\
+\end{tabbing}
+
+% Universitätsverlag
+Technische Universität Chemnitz/Universitätsbibliothek\\
+\textbf{Universitätsverlag Chemnitz}\\
+09107 Chemnitz\\
+\url{https://www.tu-chemnitz.de/ub/univerlag}\\[1ex]
+
+% Druckdienstleister
+readbox unipress\\
+in der readbox publishing GmbH\\ 
+Rheinische Straße 171\\
+44147 Dortmund\\
+\url{https://www.readbox.net/unipress/}\\[1ex]
+
+% ISSN-Angabe nur bei Bänden, die innerhalb von Schriftenreihen erscheinen
+\ifthenelse{\boolean{schriftenreihe}}{
+ISSN 2199-5354 print - ISSN 2199-5362 online\\
+\\
+}
+
+% ISBN
+ISBN 978-3-96100-125-5\\
+
+% URL
+\url{https://nbn-resolving.org/urn:nbn:de:bsz:ch1-qucosa2-723455}\\
+
+\end{small}
+
+% durch \newpage oder \pagebreak am Ende der Gruppe die Seitennummer auch auf
+% der letzten Seiten der Titelei unterdrücken
+\newpage
+\endgroup
+\end{document}

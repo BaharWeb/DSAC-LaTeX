@@ -1,0 +1,188 @@
+Prefix(:=<https://vsr.informatik.tu-chemnitz.de/ontologies/source_knowledge#>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+Prefix(oa:=<http://www.w3.org/ns/oa#>)
+Prefix(kdm:=<http://schema.omg.org/spec/KDM/1.2/kdm>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(sckm:=<https://vsr.informatik.tu-chemnitz.de/ontologies/source_knowledge#>)
+Prefix(swrl:=<http://www.w3.org/2003/11/swrl#>)
+Prefix(swrla:=<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#>)
+Prefix(swrlb:=<http://www.w3.org/2003/11/swrlb#>)
+Prefix(dcterms:=<http://purl.org/dc/terms/>)
+
+
+Ontology(<https://vsr.informatik.tu-chemnitz.de/ontologies/source_knowledge>
+Annotation(dc:contributor "Fariba Quarib"@en)
+Annotation(dc:contributor "Justin Förster"@de)
+Annotation(dc:creator "Sebastian Heil"@en)
+Annotation(dc:subject "annotation"@en)
+Annotation(dc:subject "source code"@en)
+Annotation(dc:title "SCKM Ontology"@en)
+Annotation(dcterms:license "MIT License Copyright (c) 2019 Technische Universität Chemnitz Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."@en)
+Annotation(rdfs:comment "This ontology is an OWL representation of the source code knowledge model (SCKM) formalism, which is part of the AWSM Reverse Engineering method (AWSM:RE). It employs the W3C Web Annotation standard."@en)
+Annotation(rdfs:seeAlso <https://www.w3.org/TR/annotation-vocab/>)
+Annotation(rdfs:seeAlso <﻿http://www.omg.org/spec/KDM/1.3/>)
+
+Declaration(Class(oa:Annotation))
+Declaration(Class(oa:SpecificResource))
+Declaration(Class(oa:TextPositionSelector))
+Declaration(Class(sckm:Algorithm))
+Declaration(Class(sckm:Area))
+Declaration(Class(sckm:BusinessProccess))
+Declaration(Class(sckm:Configuration))
+Declaration(Class(sckm:Deployment))
+Declaration(Class(sckm:DomainKnowledge))
+Declaration(Class(sckm:Explanatory))
+Declaration(Class(sckm:Feature))
+Declaration(Class(sckm:Persistence))
+Declaration(Class(sckm:Presentation))
+Declaration(Class(sckm:Rule))
+Declaration(ObjectProperty(oa:hasBody))
+Declaration(ObjectProperty(oa:hasSelector))
+Declaration(ObjectProperty(oa:hasTarget))
+Declaration(ObjectProperty(sckm:influences))
+Declaration(ObjectProperty(sckm:requires))
+Declaration(ObjectProperty(sckm:within))
+Declaration(DataProperty(oa:end))
+Declaration(DataProperty(oa:hasSource))
+Declaration(DataProperty(oa:start))
+Declaration(DataProperty(sckm:name))
+Declaration(AnnotationProperty(dc:contributor))
+Declaration(AnnotationProperty(dc:creator))
+Declaration(AnnotationProperty(dc:subject))
+Declaration(AnnotationProperty(dc:title))
+Declaration(AnnotationProperty(dcterms:license))
+Declaration(AnnotationProperty(swrla:isRuleEnabled))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: oa:hasBody (oa:hasBody)
+
+ObjectPropertyDomain(oa:hasBody oa:Annotation)
+ObjectPropertyRange(oa:hasBody sckm:DomainKnowledge)
+ObjectPropertyRange(oa:hasBody sckm:Feature)
+
+# Object Property: oa:hasSelector (oa:hasSelector)
+
+AnnotationAssertion(rdfs:seeAlso oa:hasSelector <kdm:SourceRef>)
+ObjectPropertyDomain(oa:hasSelector oa:SpecificResource)
+ObjectPropertyRange(oa:hasSelector oa:TextPositionSelector)
+
+# Object Property: oa:hasTarget (oa:hasTarget)
+
+AnnotationAssertion(rdfs:seeAlso oa:hasTarget <kdm:SourceFile>)
+ObjectPropertyDomain(oa:hasTarget oa:Annotation)
+ObjectPropertyRange(oa:hasTarget oa:SpecificResource)
+
+# Object Property: sckm:influences (sckm:influences)
+
+InverseObjectProperties(sckm:influences sckm:requires)
+ObjectPropertyDomain(sckm:influences sckm:DomainKnowledge)
+ObjectPropertyRange(sckm:influences sckm:Feature)
+
+# Object Property: sckm:requires (sckm:requires)
+
+ObjectPropertyDomain(sckm:requires sckm:Feature)
+ObjectPropertyRange(sckm:requires sckm:DomainKnowledge)
+
+# Object Property: sckm:within (sckm:within)
+
+ObjectPropertyDomain(sckm:within oa:Annotation)
+ObjectPropertyRange(sckm:within sckm:Area)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: oa:end (oa:end)
+
+DataPropertyDomain(oa:end oa:TextPositionSelector)
+DataPropertyRange(oa:end xsd:integer)
+
+# Data Property: oa:hasSource (oa:hasSource)
+
+DataPropertyDomain(oa:hasSource oa:SpecificResource)
+DataPropertyRange(oa:hasSource xsd:anyURI)
+
+# Data Property: oa:start (oa:start)
+
+DataPropertyDomain(oa:start oa:TextPositionSelector)
+DataPropertyRange(oa:start xsd:integer)
+
+# Data Property: sckm:name (sckm:name)
+
+DataPropertyDomain(sckm:name sckm:DomainKnowledge)
+DataPropertyDomain(sckm:name sckm:Feature)
+DataPropertyRange(sckm:name xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: oa:Annotation (oa:Annotation)
+
+AnnotationAssertion(rdfs:seeAlso oa:Annotation <kdm:Annotation>)
+
+# Class: oa:SpecificResource (oa:SpecificResource)
+
+AnnotationAssertion(rdfs:seeAlso oa:SpecificResource <kdm:SourceFile>)
+AnnotationAssertion(rdfs:seeAlso oa:SpecificResource <kdm:SourceRef>)
+EquivalentClasses(oa:SpecificResource sckm:Area)
+
+# Class: oa:TextPositionSelector (oa:TextPositionSelector)
+
+AnnotationAssertion(rdfs:seeAlso oa:TextPositionSelector <kdm:SourceRegion>)
+
+# Class: sckm:Algorithm (sckm:Algorithm)
+
+AnnotationAssertion(rdfs:seeAlso sckm:Algorithm <kdm:BehaviorUnit>)
+SubClassOf(sckm:Algorithm sckm:DomainKnowledge)
+
+# Class: sckm:BusinessProccess (sckm:BusinessProccess)
+
+AnnotationAssertion(rdfs:seeAlso sckm:BusinessProccess <kdm:ConceptualFlow>)
+SubClassOf(sckm:BusinessProccess sckm:DomainKnowledge)
+
+# Class: sckm:Configuration (sckm:Configuration)
+
+AnnotationAssertion(rdfs:seeAlso sckm:Configuration <kdm:ConfigFile>)
+SubClassOf(sckm:Configuration sckm:DomainKnowledge)
+
+# Class: sckm:Deployment (sckm:Deployment)
+
+SubClassOf(sckm:Deployment sckm:DomainKnowledge)
+
+# Class: sckm:Explanatory (sckm:Explanatory)
+
+AnnotationAssertion(rdfs:seeAlso sckm:Explanatory <kdm:CommentUnit>)
+SubClassOf(sckm:Explanatory sckm:DomainKnowledge)
+
+# Class: sckm:Persistence (sckm:Persistence)
+
+SubClassOf(sckm:Persistence sckm:DomainKnowledge)
+
+# Class: sckm:Presentation (sckm:Presentation)
+
+SubClassOf(sckm:Presentation sckm:DomainKnowledge)
+
+# Class: sckm:Rule (sckm:Rule)
+
+AnnotationAssertion(rdfs:seeAlso sckm:Rule <kdm:RuleUnit>)
+SubClassOf(sckm:Rule sckm:DomainKnowledge)
+
+
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "S5"^^xsd:string) Body(DataPropertyAtom(oa:start Variable(sckm:TR) Variable(sckm:sr)) DataPropertyAtom(oa:start Variable(sckm:TF) Variable(sckm:sf)) DataPropertyAtom(oa:hasSource Variable(sckm:SF) Variable(sckm:S)) ClassAtom(oa:SpecificResource Variable(sckm:SR)) ClassAtom(oa:TextPositionSelector Variable(sckm:TF)) ClassAtom(oa:SpecificResource Variable(sckm:SF)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:ef) Variable(sckm:er)) ClassAtom(oa:Annotation Variable(sckm:AR)) BuiltInAtom(swrlb:lessThan Variable(sckm:sr) Variable(sckm:sf)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AF) Variable(sckm:F)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AR) Variable(sckm:R)) ClassAtom(oa:TextPositionSelector Variable(sckm:TR)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SF) Variable(sckm:TF)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SR) Variable(sckm:TR)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:er) Variable(sckm:sf)) ClassAtom(sckm:Feature Variable(sckm:F)) DataPropertyAtom(oa:end Variable(sckm:TR) Variable(sckm:er)) DataPropertyAtom(oa:end Variable(sckm:TF) Variable(sckm:ef)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AF) Variable(sckm:SF)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AR) Variable(sckm:SR)) DataPropertyAtom(oa:hasSource Variable(sckm:SR) Variable(sckm:S)) ClassAtom(sckm:DomainKnowledge Variable(sckm:R)) ClassAtom(oa:Annotation Variable(sckm:AF)))Head(ObjectPropertyAtom(sckm:influences Variable(sckm:R) Variable(sckm:F)) ObjectPropertyAtom(sckm:requires Variable(sckm:F) Variable(sckm:R))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "S1"^^xsd:string) Body(DataPropertyAtom(oa:start Variable(sckm:TR) Variable(sckm:sr)) DataPropertyAtom(oa:start Variable(sckm:TF) Variable(sckm:sf)) DataPropertyAtom(oa:hasSource Variable(sckm:SF) Variable(sckm:S)) ClassAtom(oa:SpecificResource Variable(sckm:SR)) ClassAtom(oa:TextPositionSelector Variable(sckm:TF)) ClassAtom(oa:SpecificResource Variable(sckm:SF)) BuiltInAtom(swrlb:lessThanOrEqual Variable(sckm:er) Variable(sckm:ef)) ClassAtom(oa:Annotation Variable(sckm:AR)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:sr) Variable(sckm:sf)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AF) Variable(sckm:F)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AR) Variable(sckm:R)) ClassAtom(oa:TextPositionSelector Variable(sckm:TR)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SF) Variable(sckm:TF)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SR) Variable(sckm:TR)) ClassAtom(sckm:Feature Variable(sckm:F)) DataPropertyAtom(oa:end Variable(sckm:TR) Variable(sckm:er)) DataPropertyAtom(oa:end Variable(sckm:TF) Variable(sckm:ef)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AF) Variable(sckm:SF)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AR) Variable(sckm:SR)) DataPropertyAtom(oa:hasSource Variable(sckm:SR) Variable(sckm:S)) ClassAtom(sckm:DomainKnowledge Variable(sckm:R)) ClassAtom(oa:Annotation Variable(sckm:AF)))Head(ObjectPropertyAtom(sckm:influences Variable(sckm:R) Variable(sckm:F)) ObjectPropertyAtom(sckm:requires Variable(sckm:F) Variable(sckm:R))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "S2"^^xsd:string) Body(DataPropertyAtom(oa:start Variable(sckm:TR) Variable(sckm:sr)) DataPropertyAtom(oa:start Variable(sckm:TF) Variable(sckm:sf)) ClassAtom(oa:SpecificResource Variable(sckm:SR)) ClassAtom(oa:TextPositionSelector Variable(sckm:TF)) ClassAtom(oa:SpecificResource Variable(sckm:SF)) ClassAtom(oa:Annotation Variable(sckm:AR)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AF) Variable(sckm:F)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AR) Variable(sckm:R)) ClassAtom(oa:TextPositionSelector Variable(sckm:TR)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SF) Variable(sckm:TF)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SR) Variable(sckm:TR)) BuiltInAtom(swrlb:lessThan Variable(sckm:sf) Variable(sckm:sr)) ClassAtom(sckm:Feature Variable(sckm:F)) DataPropertyAtom(oa:end Variable(sckm:TR) Variable(sckm:er)) DataPropertyAtom(oa:end Variable(sckm:TF) Variable(sckm:ef)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AF) Variable(sckm:SF)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AR) Variable(sckm:SR)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:ef) Variable(sckm:sr)) BuiltInAtom(swrlb:greaterThan Variable(sckm:er) Variable(sckm:ef)) ClassAtom(sckm:DomainKnowledge Variable(sckm:R)) ClassAtom(oa:Annotation Variable(sckm:AF)))Head(ObjectPropertyAtom(sckm:influences Variable(sckm:R) Variable(sckm:F)) ObjectPropertyAtom(sckm:requires Variable(sckm:F) Variable(sckm:R))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "S3"^^xsd:string) Body(DataPropertyAtom(oa:start Variable(sckm:TR) Variable(sckm:sr)) DataPropertyAtom(oa:start Variable(sckm:TF) Variable(sckm:sf)) ClassAtom(oa:SpecificResource Variable(sckm:SR)) ClassAtom(oa:TextPositionSelector Variable(sckm:TF)) ClassAtom(oa:SpecificResource Variable(sckm:SF)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:ef) Variable(sckm:er)) ClassAtom(oa:Annotation Variable(sckm:AR)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AF) Variable(sckm:F)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AR) Variable(sckm:R)) ClassAtom(oa:TextPositionSelector Variable(sckm:TR)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SF) Variable(sckm:TF)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SR) Variable(sckm:TR)) ClassAtom(sckm:Feature Variable(sckm:F)) DataPropertyAtom(oa:end Variable(sckm:TR) Variable(sckm:er)) DataPropertyAtom(oa:end Variable(sckm:TF) Variable(sckm:ef)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AF) Variable(sckm:SF)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AR) Variable(sckm:SR)) BuiltInAtom(swrlb:lessThanOrEqual Variable(sckm:sf) Variable(sckm:sr)) ClassAtom(sckm:DomainKnowledge Variable(sckm:R)) ClassAtom(oa:Annotation Variable(sckm:AF)))Head(ObjectPropertyAtom(sckm:influences Variable(sckm:R) Variable(sckm:F)) ObjectPropertyAtom(sckm:requires Variable(sckm:F) Variable(sckm:R))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "S4"^^xsd:string) Body(DataPropertyAtom(oa:start Variable(sckm:TR) Variable(sckm:sr)) DataPropertyAtom(oa:start Variable(sckm:TF) Variable(sckm:sf)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:er) Variable(sckm:ef)) ClassAtom(oa:SpecificResource Variable(sckm:SR)) ClassAtom(oa:TextPositionSelector Variable(sckm:TF)) ClassAtom(oa:SpecificResource Variable(sckm:SF)) ClassAtom(oa:Annotation Variable(sckm:AR)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AF) Variable(sckm:F)) ObjectPropertyAtom(oa:hasBody Variable(sckm:AR) Variable(sckm:R)) ClassAtom(oa:TextPositionSelector Variable(sckm:TR)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SF) Variable(sckm:TF)) ObjectPropertyAtom(oa:hasSelector Variable(sckm:SR) Variable(sckm:TR)) BuiltInAtom(swrlb:lessThanOrEqual Variable(sckm:sr) Variable(sckm:sf)) ClassAtom(sckm:Feature Variable(sckm:F)) DataPropertyAtom(oa:end Variable(sckm:TR) Variable(sckm:er)) DataPropertyAtom(oa:end Variable(sckm:TF) Variable(sckm:ef)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AF) Variable(sckm:SF)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AR) Variable(sckm:SR)) ClassAtom(sckm:DomainKnowledge Variable(sckm:R)) ClassAtom(oa:Annotation Variable(sckm:AF)))Head(ObjectPropertyAtom(sckm:influences Variable(sckm:R) Variable(sckm:F)) ObjectPropertyAtom(sckm:requires Variable(sckm:F) Variable(sckm:R))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "AnnotationWithinArea"^^xsd:string) Body(ClassAtom(oa:Annotation Variable(sckm:AN)) ClassAtom(sckm:Area Variable(sckm:AREA)) ObjectPropertyAtom(oa:hasTarget Variable(sckm:AN) Variable(sckm:SR)) ClassAtom(oa:SpecificResource Variable(sckm:SR)) DataPropertyAtom(oa:hasSource Variable(sckm:SR) Variable(sckm:SOURCE)) DataPropertyAtom(oa:hasSource Variable(sckm:AREA) Variable(sckm:SOURCE)) ClassAtom(oa:TextPositionSelector Variable(sckm:TAN)) ClassAtom(oa:TextPositionSelector Variable(sckm:TAR)) DataPropertyAtom(oa:start Variable(sckm:TAN) Variable(sckm:san)) DataPropertyAtom(oa:start Variable(sckm:TAR) Variable(sckm:sar)) DataPropertyAtom(oa:end Variable(sckm:TAN) Variable(sckm:ean)) DataPropertyAtom(oa:end Variable(sckm:TAR) Variable(sckm:ear)) BuiltInAtom(swrlb:lessThanOrEqual Variable(sckm:sar) Variable(sckm:san)) BuiltInAtom(swrlb:greaterThanOrEqual Variable(sckm:ear) Variable(sckm:ean)))Head(ObjectPropertyAtom(sckm:within Variable(sckm:AN) Variable(sckm:AREA))))
+)

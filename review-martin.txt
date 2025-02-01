@@ -1,0 +1,133 @@
+TODO: maybe answers to the 3 research questions per chapter?
+sync all definitions with glossary
+TODO:check all pagebreaks
+
+FIGURE PLACING of fig:awsm.re.setup (figure 5.2)
+
+DONE ap-concept2.png > draw in figure: location l etc.
+
+DONE MOVE RQs AFTER ANALYSIS
+
+DONE refer to RQs in sections
+
+DONE 147 spacing
+DONE 167 spacing
+DONE 180 spacing
+trailing dot in subsubsections
+
+Transformation in chapter 6
+
+
+Title case of all listings, figures etc.
+
+Visual User Interface Analysis > CAPITAL
+
+
+# Glossary
+
+
+# Acrobat
+
+# Latex
+162 page overflow
+154 page overflow
+list of algorithms
+list of listings
+
+# Search in PDF
+"#"" in PDF (DONE)
+"??" in PDF (DONE)
+table ta (DONE)
+section se (DONE)
+
+# Search in source code
+^\cref (DONE)
+
+#Figures
+DONE figure additional RWMPA screenshot for 6.4.4 
+DONE figure for 6.5.3
+SKIP figure simplified layout examples for steps in 6.5.2
+SKIP figure replace 7.7 with combined figure
+DONE LFA tree arrows
+DONE update figure 2.1
+DONE Solution Method figures
+Solution Overview figure update and improve
+NO figure for 3.3 with independent dimensions
+DONE Figure 4.4 rename
+DONE figure 5.13 SCKM Ontology revised
+DONE S2DCS screenshot
+SKIP figure for VUE-D: conceptual figure showing ROI detection and classification 
+DONE maybe architecture figure VUE-D
+DONE figures für CI BPMN mit Lanes + 6.11
+
+
+#Bibliography
+maxcitenames=2
+My publications in printed?
+
+
+
+
+DONE Re-use reuse C2 Reuse
+
+
+Main Comments Martin
+
+3 SotA
+DONE relevance Standards (remove SOA-MF, ADM ist Basis für viele MD-approaches, ReMiP ist Migrations-Referenzmodell für Assessment bzgl. Phasen-Support)
+DONE relevance of SOA (im scope weil Web Migration (target = Web System) approaches in 4 Gruppen siehe Survey: SOA, Cloud, WSE, Web App)
+DONE Die "C1 is fulfilled" Sätze überall einbauen
+DONE Gruppierung früher (move 3.3 before 3.2)
+DONE Requirements-weise berichten
+DONE Zwei unabhängige Gruppierungs-dimensionen: Target und Method, welche beide jeweils Einfluss auf Requirements, daher Requirements-weise ungünstig
+einzelne Approaches lassen sich nicht gruppieren (maximaler overlap TODO), wegen zwei dimensionen und weil migration extrem kontext-spezifisch
+DONE 3.4 umbenennen zu Analysis
+HEADING für 4
+DONE effort and risk shortcomings ADD to end of state of the art
+DONE (changed) 4.1 Research Design
+DONE (changed) 4.2 Solution Design
+Evaluation +ROs
+
+4 Concept
+- mehr Bezug zu Research Goals und wie sie gelöst werden (einbauen)
+DONE mehr figures (add UML figure für SKCM)
+DONE weniger tuple formalisms (alexey's component model hat ähnlich viele, aber im text integriert und stattdessen definition paragraphs)
+DONE RO 1 - Overall Goal
+- RO Ziele vs Results
+DONE Herleitung Principles (P1 Web Engineering/Standard-getriebene Migration ADM, P2 Folge aus SotA und Integration mit 3 full-coverage Methodologien, P3 Folge aus 50/50 in SotA, P4 Folge aus desirability/feasibility und demonstrative prototyping)
+DONE formalisms: warum KDM refs - extension of KDM (KDM ist metamodell und dafür gedacht, eigene Modelle darauf abzubilden)
+
+
+5 AWSM:RE
+DONE Aufteilung zwischen Conceptual Model und Implementation
+DONE Mehr Minto, mehr Bilder
+
+6 AWSM:RM
+DONE Related work zu SotA?? (Trennung SotA: Web Migration, Related Works: Relevante Bausteine für Lösungen)
+DONE mehr praktische Beispiele
+
+7 AWSM:CI
+DONE Argumentation Minto
+DONE mehr Bilder
+
+
+# Meeting 24. October 8:30-9:50
+DONE: Die "C1 is fulfilled" Sätze überall einbauen
+DONE Goal formulations "to achieve", not according etc.
+DONE two-dimensional approach groups introduced before assessment
+- minto bullet point lists for underlying blocks
+- describe the function of what is presented before presenting
+DONE Platform > Toolsuite
+DONE explicit GAPS in SotA
+DONE chapter 4 eigene lösung deutlicher hervorheben
+DONE RO 1 - Overarching Goal
+DONE principles clarified as part of solution and rationale, linked to gaps
+DONE ISV stakeholder instead of software company used more consistently
+DONE introduction: history shortened and related to WM
+DONE introduction: explanations for situation, motivation and problem added
+DONE clarified relation between requirements and all RQs
+DONE clarified relation between ADM and approaches/thesis
+DONE clarified relation between ReMiP and approaches/thesis
+DONE clarified name and scope of SOA migration group in SotA
+DONE moved problem analysis from solution to chapter 2 and integrated with requirements
+DONE solution chapter re-structured
