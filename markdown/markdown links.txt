@@ -1,3 +1,0 @@
-http://blog.kdheepak.com/writing-papers-with-markdown.html
-
-https://bartschat.github.io/post/thesis_workflow/

@@ -1,3 +1,0 @@
-- search for ¿, n.d., -, [A-Za-z]+\d+, tab:, alg:, ", ,", def:
-- Replace - with --- (DONE)
-- DONE check thesis.log for "multiply defined" (DONE)
