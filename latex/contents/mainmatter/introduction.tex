@@ -1,308 +1,262 @@
 \hypertarget{sec:introduction}{%
 \chapter{Introduction}\label{sec:introduction}}
+In the era of overwhelming online data, enabling non-technical users to
+make more informed decisions has become a critical priority. A factor
+determinant of the decision preciseness and accuracy is the extent to
+which the decision support tool offers domain specificity \autocite{Zhu2022}. However, the rapid technological advancements and
+ever-changing domain requirements, coupled with the vast accessible
+online data, have made situational decision-making more challenging and
+prone to inaccuracies. Low expressive power, lack of customizability,
+and unreasonable usability of current situational decision-making tools
+are main contributing problems. Addressing these challenges is essential
+to fully resolving the central problem. This section describes the
+current situation and motivations for developing situational
+decision-making tools. It also outlines the central problem and the
+contributing subproblems that form the basis for this thesis. 
 
-The topic of this thesis is the application of scientific approaches to address effort and risk concerns for \glspl{isv}\footnote{\url{https://www.gartner.com/it-glossary/isv-independent-software-vendor/} Retrieved: 7.12.2019} when moving from their existing non-\glslink{web}{Web} \glslink{Desktop Application}{desktop} \glspl{Legacy System} to modern \glslink{web}{Web}-based systems.
-The introduction motivates the need for a dedicated approach to address the initial unwillingness and resistance of these companies to commence a \gls{Web Migration}.
-High effort and risk due to the lack of a dedicated approach supporting the initial phase of a \gls{Web Migration} are identified as main challenges.
-This thesis contributes to the solution of these problems by providing a set of methods and technical infrastructure to support the initiation of \gls{Web Migration}.
 
 \vspace{-15pt}
 \hypertarget{sec:situation}{%
 \section{Situation}\label{sec:situation}}
 \vspace{15pt}
 
-\Gls{web}-based Systems (\glspl{Web System}) are widely used and familiar for users, as they offer significant advantages over traditional \glspl{Desktop Application} such as instant deployment, a common standards-based target development platform, and a high level of interactivity.
-This section provides a brief overview of the current situation of (\glspl{Web System}) and migration to (\glspl{Web System}), highlighting the benefits of migrating to the \gls{web} and major research areas.
-\emph{\gls{Web Migration}} is a particular type of \emph{\gls{Software Migration}} -- the process of moving an existing software system from one environment to another \autocite{SWEBOK2014} -- moving a \emph{non-\glslink{web}{Web} \gls{source system}} to a \emph{\glslink{web}{Web}-based target environment}.
-In terms of the joint \gls{iso}/\gls{iec} and \gls{ieee} 14764 standard for software maintenance \autocite{ISO/IEEE2006SoftwareLifeCycle}, it is \emph{adaptive and perfective maintenance} adapting software systems for \glslink{web}{Web}-based environments and improving functionality and maintainability.
-Several related concepts exist in the context of \emph{\glslink{web}{Web}-based environments}: \Gls{web} Sites, \glspl{Web Application}, \Gls{web} Services.
-Since \gls{Web Migration} research addresses different types of \glslink{web}{Web}-based systems as migration targets, we use the term \emph{\gls{Web System}} as umbrella term following \autocite{Kienle2014EvolutionWeb} and adapting definitions from \autocite{Gaedke2000Diss,Kappel2006WebEngineering}.
+This section provides an overview of current situation in which the
+challenge of domain specificity in situational decision-making occurs
+for domain experts. Situational decision-making concerned with making
+effective and rapid decisions in a specific context and domain to
+address diverse requirements \autocite{Hagele2021}. Based
+on this definition, situational applications are characterized by having
+short lifespan and being contextually customizable to address immediate
+and non-permanent requirements of domain-experts \autocite{Pahlke2010}. Reflecting the ever-changing requirements in enterprise
+management ecosystems, situational applications are becoming
+increasingly important. Given the peculiar characteristics of these
+applications, traditional software development processes are neither
+sufficient nor reasonable for their design and creation \autocite{Casati2012}.
 
-\vspace{-15pt}
-\begin{thesisdefinition}{Web System}{def:websystem}
-A Web System is a software system based on technologies and standards of the \gls{w3c} that provides Web specific resources.
-\end{thesisdefinition}
+Promising advances in communication and information technology during
+the last decades result in overwhelming amount of data available online
+\autocite{Noran2018}. To contribute to this situation, increasing
+number of service providers publish functionalities and data on public
+registries as web services. According to \autocite{Zarei2021}, as end
+of 2021, every year 2000 new web services was registered on
+ProgrammableWeb. Such advancements are influencing decision making
+paradigm in various sectors by promising adequate knowledge to aid
+domain experts making situational decisions more informatively \autocite{Noran2018}.
 
-\vspace{-5pt}
-In contrast to this broad definition, we use the term \gls{Web Application} for a specific type of \gls{Web System} that includes a \glslink{web}{Web}-based user interface. \glspl{Web Application}, as defined by \citeauthor{Kappel2006WebEngineering}, are the main focus of this thesis as \glslink{target environment}{Web Migration target}:
+Domain experts in the context of this work are non-technical end-users
+who possess adequate domain knowledge and capable of performing
+domain-related operations. Involving domain experts in development
+process of situational applications, brought advantages such as
+improving end tool's provision and accelerating implementation and
+development cycles. Moreover, domain experts can propose levels of
+creativity which cannot be introduced by developers due to their lack of
+domain knowledge \autocite{Ponce2022}. To fully realize the domain experts potential, two research fields,
+\gls{hci} and \gls{eud}, propose
+context-aware solutions that bridge the gap between developers and
+domain experts \autocite{Wei2020}. \gls{eud} methods targets end user
+as the solution designer and developer. According to \autocite{Lieberman2006}, \gls{eud} can be defined as ``Set of methods, techniques and
+tools to enable non-technical end-users to create and modify software
+artifacts.'' Based on this definition, \gls{eud} proposes unique competitive
+advantage for domain-experts by enabling them to address their
+situational needs in dynamic environments \autocite{HenryLiebermanFabioPaterno2004}.
 
-\vspace{-15pt}
-\begin{thesisdefinition}{Web Application \autocite{Kappel2006WebEngineering}}{def:webapplication}
-A Web Application is a software system based on technologies and standards of the \gls{w3c} that provides Web specific resources such as content and services through a user interface, the Web browser.
-\end{thesisdefinition}
+A crucial focus point for domain experts is the tool's domain
+specificity, which is a well-known mean to ensure the application
+adoption in a domain-specific context \autocite{Ardito2018}. A
+domain-specific tool involves domain experts only in activities,
+operations and concepts that are restricted to their area of expertise
+\autocite{Soi2014a}. In the terms of domain specificity, the \gls{eud}
+approaches face challenges in different development phases to target
+multiple levels of customizability for the envisioned situational tool
+\autocite{Ponce2022}.
 
+Most promising \gls{eud} solutions within this field are in the form of Web
+Mashups (also known as mashups or service-mashup). Web Mashup proposes
+easy-to-use and light weight composition of available services on the
+web (such as \gls{api}s) allowing end-users to access multiple data sources
+and service, in a single location \autocite{Santos2019}. A number
+of mashup tools have been developed by leading companies, such as IBM
+Mashup Center. Given the web mashup's popularity and the characteristics
+of situational applications, web mashups can offer a viable solution for
+situational applications \autocite{Cao2017}.
 
-\vspace{-5pt}
-One of the main characteristics of \gls{Web Engineering} -- the ``application of systematic, disciplined, and quantifiable approaches to development, operation, and maintenance of \glslink{web}{Web}-based applications'' \autocite{Deshpande2002WebEngineering} -- is the continuous evolution of \Gls{web} technologies \autocite{Gitzel2007WebEngineeringMDD}.
-All steps in this evolution represent targets of \gls{Web Migration} and major research areas within \gls{Web Migration} research: \gls{Web Application} migration, migration to \Gls{web} Services, Cloud migration, and migration within these steps, \gls{Web Systems Evolution}.
-
-Modern \glspl{Web Application} are the result of this evolution \autocite{Kienle2014EvolutionWeb}, which started with the proposal of Hypertext as Information Management system by Tim Berners Lee in March 1989 \autocite{Berners-Lee1989}.
-Quickly evolving from the original textual content-focused system, the \Gls{web} started to be perceived as ``a universal, standards-based integration platform'' \autocite{Knorr2003WebAsPlatform} and the introduction of the term \emph{\gls{Web Application}}, indicating that their user experience became similar\footnote{cf.~features defined in \autocite{Rodriguez-Echeverria2012MIGRARIA}} to that of \emph{\glspl{Desktop Application}} \autocite{Kienle2014EvolutionWeb}.
-%Technologies for dynamic behavior on the client and server side led to the introduction of the term \emph{\gls{Web Application}}, indicating that their user experience became similar\footnote{ \autocite[cf.~features defined in][]{Rodriguez-Echeverria2012MIGRARIA}} to that of \emph{\glspl{Desktop Application}} \autocite{Kienle2014EvolutionWeb}.
-%Increased usage of dynamic content allowed users to use the \Gls{web} as mass collaboration system in the era referred to as \Gls{web} 2.0 in the mid-2000s \autocite{OReilly2007Web2.0}.
-
-Composing applications from \emph{\Gls{web} Services}, i.e., reusable pieces of functionality invokable via \gls{http}, soon became a focus in both research and industry \autocite{Kienle2014EvolutionWeb}.
-The architectural paradigm of \gls{soa} \autocite{Oasis2006SOA} is closely related to this development and an ecosystem of \Gls{web} protocols \autocite{W3C2007WSDL2.0,W3C2003SOAP,OASIS2007BPEL} was created.
-
-\emph{Cloud Computing} allows \glspl{Web System} to be built based on scaleable sets of rapidly provisioned, shared resources \autocite{NIST2011CloudComputing}.
-%Of the related service models \gls{paas}, \gls{iaas} and \gls{saas}, 
-The related \emph{\gls{saas} paradigm} not only influenced the architecture of \glspl{Web Application}, but also impacted end users' perception and expectations of software \autocite{BetterCloud2017SaaSWorkplace,Fowley2017CloudSME} allowing ubiquitous access without installation. 
-\gls{saas} is the largest segment of the public cloud market with increasing tendency \autocite{Statista2018SaaSStatistics}.
-
-High popularity and use of mobile devices \autocite{Statista2018MobileWeb} in private and work contexts have changed end users' expectations with regard to high levels of interactivity and social interactions \autocite{Bitkom2013Arbeit30}, putting pressure on \glspl{isv} to renew their existing systems accordingly.
-%This created the need for open \glspl{api} for integration with third-party systems and the requirement of flexible presentation layers capable of handling the vast amount of different devices giving rise to responsive design frameworks like Bootstrap\footnote{\url{https://getbootstrap.com/} Retrieved: 6.12.2019}.
-
-The above evolution of \glspl{Web System} has brought various advantages over traditional \glspl{Desktop Application} making \gls{Web Migration} desirable for \glspl{isv}, such as:
-
-\begin{itemize}
-\tightlist
-\item
-  Standardized Target Development Platform
-\item
-  Instant Deployment
-\item
-  Low Access Requirements
-\item
-  High level of Interactivity and Social Interactions
-\end{itemize}
-\par
-In contrast to \glspl{Desktop Application} \autocite{Puder2004a}, \glspl{Web Application} enable \glspl{isv} to focus on one single target development platform based on \emph{open standards}.
-This significantly reduces the development workload to provide software for many different platforms and devices, since only one version of the software based on one set of technologies is needed \autocite{OReilly2007Web2.0}.
-Development efficiency is increased by only requiring one development infrastructure and set of tools.
- %, as opposed to the platform-wise toolchains (e.g., compilers, \glspl{ide}) of \glspl{Desktop Application}.
-\emph{Open \Gls{web} Standards} like \gls{http}, \gls{html}, \gls{css}, and JavaScript form the core of \glspl{Web Application}, lowering the risk of technology deprecation.
-%They are standardized, published and continuously updated by international standardization bodies like \gls{ieee} and \gls{w3c} and can be publicly accessed and used without restrictions.
-%Therefore, the risk of technology deprecation is significantly lower than for proprietary \gls{Desktop Application} technologies.
-%Development staff needs only be trained on one technological base and can be hired from a potentially more extensive group of developers with experience in \Gls{web} technologies\footnote{cf.~https://insights.stackoverflow.com/survey/2019}.
-
-The \Gls{web}'s underlying client-server architecture allows for \emph{instant deployment} by enabling to perform updates in one place \autocite{Gitzel2007WebEngineeringMDD}, the server. %:
-%directly, if the locus of code execution is on the server side, or indirectly, if the locus of code execution is on the client side and the code is distributed via the server.
-The ability to instantly deploy new versions is of great advantage for \glspl{isv} since it allows for shorter development cycles and thus faster reactions on changing or new requirements and reduced time-to-market \autocite{Khadka2014ProfessionalsModernization,Fowley2017CloudSME}.
-
-%From the end users' perspective, 
-\glspl{Web Application} impose \emph{low requirements for accessing software} compared to \glspl{Desktop Application}.
-%86\% of end users find \gls{saas} applications help them succeed more than desktop alternatives \autocite{BetterCloud2017SaaSWorkplace}.
-They can be used from any system with a \Gls{web} browser without installation, reducing time and complexity for users.
-%The browser has become a \emph{standard interface} \autocite{Aversano2001} / \emph{standard client} \autocite{Gitzel2007WebEngineeringMDD}.
-The resulting high \emph{application portability} \autocite{Gitzel2007WebEngineeringMDD} fosters a ubiquity of software that allows for new work patterns \autocite{Bitkom2013Arbeit30}. % (cf.~\emph{SaaS-Powered Workplace}: 38\% of companies almost entirely running on \gls{saas} as of 2017 \autocite{BetterCloud2017SaaSWorkplace}).
-The lower complexity and effort give software vendors the chance to address potentially larger user bases \autocite{ForresterResearch2011Modernization}.
-
-\emph{Social interactions} in potentially large user bases have become widespread in \glspl{Web Application} for end users, allowing the formation of instant online communities \autocite{Bressler2000OnlineCommunities} resulting in higher levels of user engagement \autocite{Bressler2000OnlineCommunities} and increased information sharing in work contexts \autocite[cf.~\emph{Shareconomy}][]{Bitkom2013Arbeit30}.
-%These are advantageous for companies through higher levels of user engagement \autocite{Bressler2000OnlineCommunities}.
-%Social information sharing is advantageous also in working contexts (cf.~\emph{Shareconomy} \autocite{Bitkom2013Arbeit30}).
-
-%On the technological level, this is enabled by two main factors.
-%The use of URLs as uniform handles for addressing \Gls{web} resources and application states enables quick sharing of arbitrary \gls{Web Application} contents and has seen deep integration into modern platforms, e.g., sharing functionalities of mobile operating systems, and applications, e.g., link-based sharing in most \gls{saas} applications such as Dropbox, Office365 or GitHub.
-%The availability of \glspl{api} for third-party developers and corresponding \Gls{web} protocols like OAuth allow easier integration with other \glspl{Web Application}.
-
-Due to these advantages, \glspl{Web Application} are becoming dominant over \glspl{Desktop Application}, with new software being built as \glspl{Web Application} \autocite{BetterCloud2017SaaSWorkplace} and existing software being replaced by \glspl{Web Application} \autocite{Gartner2012SaaSSurvey}.
-%A survey of 50 Italian companies identified the \Gls{web} as the main target of migration activities \autocite{Torchiano2008ItalianSurvey}.
-For many companies, the \Gls{web} is the main target of migration activities \autocite{Torchiano2008ItalianSurvey}.
-%From a business perspective, 
-Cloud computing/\gls{saas} has seen the most interest from the business perspective \autocite{Statista2018SaaSStatistics}.
-%While \gls{saas} comprises more aspects than software architecture and is thus not a synonym for \glspl{Web Application}, the shift from traditional on-premise software to \gls{saas}-based cloud software is closely related to \glspl{Web Application}. The required interfaces and communication are mostly implemented using standard \Gls{web} protocols, and most \gls{saas} solutions are accessed via \gls{http} and use browsers as clients.
-The shift from traditional on-premise software to \gls{saas}-based cloud software is closely related to \glspl{Web Application} as interfaces and communication are implemented using standard \Gls{web} protocols, and most \gls{saas} solutions use browsers as clients.
-%Thus, the subsequent \gls{saas}-related studies are also indicative of tendencies of usage of traditional on-premise desktop applications in comparison to \glspl{Web Application}.
-The total size of the public cloud \gls{saas} market was already 91.75 billion USD worldwide in 2016 \autocite{Statista2018SaaSMarketSize} and is growing \autocite{Statista2018SaaSMarketSize,BetterCloud2017SaaSWorkplace,Chan2018SaaSStatistics}.
-%The cloud shift rate of the \gls{saas} market in 2016 to 2020 is growing three times faster than \gls{paas} and two times faster than \gls{iaas} \autocite{BetterCloud2017SaaSWorkplace}.
-The number of \gls{saas} applications that organizations use is rising, and many companies will be running purely on \gls{saas} soon \autocite{BetterCloud2017SaaSWorkplace}.
-
-Software vendors react to these developments by no longer building traditional on-premise software.
-The vast majority of end users consider \gls{saas} applications more helpful than desktop alternatives \autocite{BetterCloud2017SaaSWorkplace}.
-Existing solutions are becoming not only extended by but increasingly replaced with \gls{saas} solutions \autocite{Gartner2012SaaSSurvey}.
-Studies show that acceptance of \glspl{Web Application} is high even in traditional sectors like banking \autocite{BitkomResearch2016DigitalBanking}.
-%For instance, online banking is well-established for internet users in Germany \autocite{BitkomResearch2016DigitalBanking}.
 
 \vspace{-15pt}
 \hypertarget{motivation}{%
 \section{Motivation}\label{motivation}}
 \vspace{15pt}
 
-Despite the widespread use and familiarity of \glspl{Web Application} for end users and their advantages over traditional \glspl{Desktop Application} as described above, there are still many \emph{non-\glslink{web}{Web} \glspl{Legacy System}} and \glslink{Software Modernization}{modernization} remains an essential topic in the industry \autocite{Batlajery2014IndustrialSurveyModernization,Khadka2014ProfessionalsModernization,Gartner2013CIOAgenda,Gartner2013Priorities,NASCIO2016,ForresterResearch2011Modernization}.
-This section motivates the thesis by arguing that \gls{Web Migration} is difficult due to the characteristics of \glspl{Legacy System}.
+Despite technological advancements in data generation and functionalities access (via \gls{api}s, web services, etc.), the disparity between information provided by online services and the knowledge necessary for situational decision-making is widening \autocite{Noran2018}.A large number of systems designed to enable end users making more informed decisions, with Business Intelligence (BI) holding a central significance. The term BI refers to a group of software applications, platforms, technologies, and processes for assisting end-users in decision-making. However, the provided solutions are not tailored to the unique requirements of situational applications therefore, cannot fully satisfy the customizability and domain specificity required by domain experts \autocite{Pahlke2010} \autocite{Ardito2018}.
+On the other hand, developing situational applications requires a specific technical expertise that domain experts do not possess. Technical skills in this context range from understanding web technologies, such as\gls{api} integration and scripting languages, to domain modeling and tool customization \autocite{Ponce2022}. From the programmers' perspective, developing applications for transient requirements from scratch is deemed unprofitable in terms of time and effort \autocite{Aghaee2014}. Although numerous solutions in the field of \gls{eud} have been proposed in recent years to address development challenges for non-technical users, only a few primarily focus on domain specificity. According to a survey conducted in 2019, only 33\% of \gls{eud} solutions are domain-specific, with two-thirds of solutions concentrating on providing general applications \autocite{Santos2019}. Bearing in mind that adopting such generic applications to be domain-specific is a non-trivial and error prone task \autocite{Soi2014a}. Therefore, a suitable approach is required to empower domain experts in developing situational applications in compliance with their domain of expertise.
 
-\emph{\glspl{Legacy System}} and \gls{Legacy Modernization} have been an interest for research for a long time.
-Several definitions exist in literature.
-An overview is given by \citet{Wagner2014}.
-In this thesis, we follow the original definition of Brodie and Stonebaker \autocite{Brodie1995Migrating}:
-
-\vspace{-15pt}
-\begin{thesisdefinition}{Legacy System \autocite{Brodie1995Migrating}}{def:legacysystem}
-Any systems that cannot be modified to adapt to continually changing business requirements and their failure can have a severe impact on business.
-\end{thesisdefinition}
-
-%\vspace{-5pt}
-%These \glspl{Legacy System} are characterized as follows:
-\glspl{Legacy System} are \emph{business-critical}, i.e., they represent great value for the \gls{isv} due to the vast amount of \emph{knowledge} about business processes, rules, etc. \autocite{Aversano2001,Sneed2010SoftwareMigration,Wagner2014} resulting from high investments \autocite{Lucia2009METAMORPHOS} and generate much revenue  \autocite[``cash cows''][]{Khadka2014ProfessionalsModernization}.
-This value can only be preserved through migration into new technological environments \autocite{Fuhr2013SOAMIG}.
-\glspl{Legacy System} \emph{resist modification}  \autocite{Bisbal1999LegacyInformationSystems}.
-\glspl{Legacy System} are \emph{poorly documented} or completely lack documentation \autocite{Sneed2010SoftwareMigration,warren2012renaissance,Batlajery2014IndustrialSurveyModernization,Lucia2008}.
-There is a \emph{lack of experienced workforce} in the \gls{isv} which developed the system \autocite{Batlajery2014IndustrialSurveyModernization} due to changes or retirement of the original staff \autocite{Lucia2008}.
-\glspl{Legacy System} are \emph{based on obsolete technologies} that are incompatible with current/future technological environments and potentially discontinued \autocite{Perez-Castillo2013PRECISO,Batlajery2014IndustrialSurveyModernization,Heil2016AWSM}.
-\glspl{Legacy System} are \emph{too rigid to comply with new business requirements} \autocite{Batlajery2014IndustrialSurveyModernization}.
-Obsolete technologies \autocite{Yli-Huumo2016TD} and degraded architecture \autocite{Li2015TDSMS} of \glspl{Legacy System} constitute \emph{\gls{Technical Debt}} \autocite{Cunningham1992TD,Avgeriou2016TD}, causing high cost and financial risk.
-Studies over large software repositories determine an average \gls{Technical Debt} per line of code from 3.61 USD \autocite{CAST2011} to 15 USD \autocite{Curtis2012EstimatingTD}, meaning that larger systems with more than 300 \glslink{loc}{KLOC} accrue between 1 to 4.5 million USD of \gls{Technical Debt}.
-
-While the above characteristics cause high effort for maintenance and implementation of new requirements, many \glspl{Legacy System} still exist in the industry \autocite{Fuhr2013SOAMIG}.
-The main reason for their existence is their business-critical role for the company.
-Surveys \autocite{Khadka2014ProfessionalsModernization,Batlajery2014IndustrialSurveyModernization} show that they are perceived as stable, reliable, proven technology, and performance-optimized.
-Respondents' answers indicate a tendency towards the ``never touch a running system'' mindset \autocite{Batlajery2014IndustrialSurveyModernization}.
-
-\Gls{Legacy Modernization} is continuously among the top ten technology priorities for CIOs \autocite{Gartner2013CIOAgenda}, at position 5 in both industry \autocite{Gartner2013Priorities} and public sector \autocite{NASCIO2016}, with the adoption of cloud computing ranked third \autocite{Gartner2013Priorities,NASCIO2016} and mobile second \autocite{Gartner2013Priorities}, with high expectations \autocite{ForresterResearch2011Modernization}.
-
-%Closely related to the topic of \glspl{Legacy System}, \emph{\gls{Technical Debt}} attracts increasing attention in academia and industry \autocite{Li2015TDSMS,Yli-Huumo2016TD}.
-%The \gls{Technical Debt} metaphor \autocite{Cunningham1992TD} describes the negative impacts of \gls{Legacy System} characteristics in the long term in analogy to financial debts:
-%A recent definition agreed upon by researchers and practitioners in the 2016 Dagstuhl Seminar ``Managing Technical Debt in Software Engineering'' is:
-
-%\begin{thesisdefinition}{Technical Debt \autocite{Avgeriou2016TD}}{def:technicaldebt}
-%Technical debt is a collection of design or implementation constructs that are expedient in the short term but set up a technical context that can make future changes more costly or impossible.
-%\end{thesisdefinition}
-%
-%Studies over large repositories of software from different domains determine the average \gls{Technical Debt} per line of code at 3.61 USD, meaning that larger systems with more than 300 \glslink{loc}{KLOC} accrue more than 1 million USD of \gls{Technical Debt}.
-%\autocite{CAST2011} Less conservative estimates on the same repository reach more than 15 USD per line of code \autocite{Curtis2012EstimatingTD}.
-%\gls{Technical Debt} results from intentional and unintentional \emph{violations} of good architectural and coding practices which are likely to cause operational problems like outages, security breaches or which contribute to high costs of ownership, e.g.~when implementing changes \autocite{Curtis2012EstimatingTD}.
-%It has two components, the cost of fixing these violations -- called \emph{principal} -- and the continuing costs of leaving violations unfixed -- called \emph{interest}.
-%In \glspl{Legacy System}, the old technology still in use can be seen as \gls{Technical Debt} \autocite{Yli-Huumo2016TD}.
-%While \gls{Technical Debt} is not the focus of this thesis, the metaphor characterizes \glspl{Legacy System} and helps to understand better the motivation to modernize legacy software.
 
 \vspace{-15pt}
 \hypertarget{sec:problem}{%
 \section{Problem Statement}\label{sec:problem}}
 \vspace{15pt}
 
-Making a transition from non-\glslink{web}{Web} \glspl{Legacy System} to \glslink{web}{Web}-based systems is desirable for \glspl{isv} due to the advantages of the \Gls{web} platform and shortcomings of existing systems detailed above.
-What is more, this is ``widely recognized as a must for keeping competitive in the dynamic business world'' \autocite{Aversano2001} to be able to keep pace with changing user expectations and be able to implement new requirements \autocite{Fuhr2013SOAMIG,Lucia2008}.
+Concerning the situation described in the previous chapter, the identified central problem in this thesis is “High complexity and technical barriers in developing situational decision-support systems within a well-defined domain”. These systems are software solutions providing functionalities required for domain-specific decision-making. The immediate effect of the problem is manifested as domain experts’ failure in making informed decisions suitable for domain’s peculiar characteristics. 
+By thoroughly investigating the central problem, three contributing subproblems are identified.
 
-Commencing a \gls{Web Migration} is hard, however.
-The above reports on \gls{Software Modernization} indicate that \glspl{isv} are still struggling to modernize their \glspl{Legacy System} and there are still many non-\glslink{web}{Web} \glspl{Legacy System} in existence.
-This section defines the specific problem of the thesis: the lack of suitable approaches for the initial phase of \gls{Web Migration} addressing \glspl{isv} concerns about effort and risk.
-Both the business and technical perspectives make \glslink{Software Modernization}{modernization} difficult \autocite{Khadka2014ProfessionalsModernization}.
-\emph{Effort} and \emph{Risk} \autocite{Heil2018ReWaMP,Khadka2014ProfessionalsModernization,Canfora2000Decomposing,Bisbal1999LegacyInformationSystems} are rendering \glspl{isv} hesitant to commence a \gls{Web Migration}.
+\textbf{Limited usability:} Usability \autocite[cf.][def. 3.4451]{ISO/IEEE24765Vocabulary} is considered as an important
+quality factor in terms of web applications which mainly targets the
+human-computer interactions \autocite{Ponce2022}. The notion of ``easy to use''
+determines a tool's usability which is principally related to efficiency
+and effectiveness \autocite{Zhao2019}. Achieving proper level of
+usability for domain experts is mostly hindered by the overwhelming
+complexity of emerging web technologies and amount of data available
+online. This issue manifests itself mainly in complex scenarios of
+situational applications \autocite{Ponce2022} \autocite{Tang2021}. EUD
+proposes user-centric, lightweight approaches to foster usability for
+domain experts. Despite number of various solutions in this domain, the
+current EUD tools are still too difficult to be used for situational
+decision making \autocite{Zhao2019}. The immediate effect of this
+subproblem manifests itself in uninformative and poor situational
+decisions made by domain experts.
 
-\textbf{Effort} \autocite[cf.][def. 3.1350]{ISO/IEEE24765Vocabulary}. Effort  for \glslink{Software Modernization}{modernization} comprises not only direct development activities, but also managing the modernization project and training users on the new systems \autocite{ISO/IEEE2006SoftwareLifeCycle,Sneed2010SoftwareMigration,Seacord2003ModernizingLS}.
-Even case studies conducted to demonstrate the efficiency of proposed \glslink{Software Modernization}{modernization} approaches required one person-year or longer.
-For instance, \citet{Distante2006CaseStudy} report 12+ PM for a medium-sized 112 \glslink{loc}{KLOC} Visual Basic project, \citet{Bernhart2012} 18+ PM for 250 \glslink{loc}{KLOC} COBOL, \citet{Aversano2001} 8PM for 130 \glslink{loc}{KLOC} COBOL and \citet{Maenhaut2015} report about 14 PM
-for two projects.
-Modernization effort is influenced by the complexity of the \glslink{Legacy System}{legacy} architecture \autocite{Khadka2014ProfessionalsModernization} and the decomposability \autocite{Aversano2001,Lucia2006,Brodie1995Migrating}.
-\emph{Resistance from within the organization} \autocite{Sneed2010ReMiP} is another factor influencing effort. With the unwillingness of staff to share knowledge and resistance towards change in general and new technologies, in particular, effective communication of the necessity and benefits of \glslink{Software Modernization}{modernization} is required \autocite{Khadka2014ProfessionalsModernization}.
-According to \citet{Gartner2016Culture}, ``Cultural issues are at the root of many failed business transformations''.
+\textbf{Poor expressive power:} The definition of expressiveness varies
+according to the application domain. Generally, a tool's
+expressive power is determined by various solution classes that can be
+generated by domain experts enabling them to go beyond trivial
+application logic \autocite{Soi2013}. In the context of this work a tool is
+considered expressive if it can comprehend domain expert intentions and
+reflect them in the final solutions accordingly. The gap between
+situational requirements and final solution occurs because tools do not
+speak the domain expert's language. To contribute to this issue, most
+existing EUD tools sacrifices their expressivity to achieve higher
+usability \autocite{Ponce2022}. Therefore, restricted expressiveness results in
+solutions with trivial logic incapable of assisting domain experts with
+their complex situational requirements.
 
-\textbf{Risk} \autocite[cf.][def. 3.3512]{ISO/IEEE24765Vocabulary}. Modernizing \glspl{Legacy System} involves high \emph{risk} \autocite{Heil2018ReWaMP,Khadka2014ProfessionalsModernization,Canfora2000Decomposing,Bisbal1999LegacyInformationSystems,Seacord2003ModernizingLS}.
-Uncertainty of success makes \glspl{isv} hesitant to start projects.
-The risk of failure in \glslink{Software Modernization}{modernization} projects is high \autocite{Gartner2014ModernizationFailure,ForresterResearch2011Modernization} due to feasibility threats like lack of experienced staff for \glslink{Software Modernization}{modernization} itself \autocite{Sneed2010SoftwareMigration,Seacord2003ModernizingLS} and for \Gls{web} development and due to the complexity of the \gls{Legacy System} \autocite{Khadka2014ProfessionalsModernization}.
-Modernization poses the risk of \emph{loss of knowledge} \autocite{Khadka2014ProfessionalsModernization}.
-Existing \glspl{Legacy System} represent valuable knowledge about business processes, rules, etc.
-\autocite{Aversano2001,Sneed2010SoftwareMigration,Wagner2014}, often resulting from years of requirements elicitation and experience.
-However, similar to \emph{tacit knowledge} in organizations which is not expressed explicitly but guides human behavior \autocite{Nonaka2008TacitKnowledge}, the knowledge in \glspl{Legacy System} is not explicitly documented but governs how they operate.
-Thus, \glslink{Software Modernization}{modernization} bears the risk of losing this valuable knowledge \autocite{Khadka2014ProfessionalsModernization}.
-\emph{Desirability} of \glslink{Software Modernization}{modernization} can be uncertain for companies because it is difficult to predict the acceptance of the new system by customers, the utility and usability of a \glslink{web}{Web}-based solution, and the overall Return on Invest \autocite{Khadka2014ProfessionalsModernization}.
-
-Similar to \citet{Razavian2013PHD} for SOA Migration, we observed that \gls{Web Migration} is considered sufficiently addressed in academia, but practitioners still face difficulties in commencing a \gls{Web Migration} project.
-Surveys show that the majority of the industry does not use academic resources for modernization \autocite{Batlajery2014IndustrialSurveyModernization}.
-
-Many existing migration approaches do not sufficiently address the above problems by supporting \glspl{isv} in the initial phase (cf.~analysis of phase support in our survey \autocite{Heil2017Survey}), often assuming that the decision to modernize is already taken.
-
-%\textbf{Problem Statement}. The problem addressed by this thesis is the difficulties of software companies to commence \gls{Web Migration} due to effort and risk on the one side and a lack of dedicated approaches for the initial phase on the other side.
-\textbf{Problem Statement}. The problem addressed by this thesis is the lack of dedicated approaches for the initial phase of \gls{Web Migration} by taking into account concerns about effort and risk. This leaves \glspl{isv} struggling to commence \gls{Web Migration}.
-
-\hypertarget{sec:scope}{%
-\section{Scope}\label{sec:scope}}
-
-Thus, this thesis is dedicated to the following research questions:
-
-\begin{researchquestion}{rq:1}
-How to support \glspl{isv} to commence \gls{Web Migration}?
-\end{researchquestion}
-
-This guiding \emph{central research question} \autocite{Creswell2014ResearchDesign} is complemented by the following two detail research questions: 
-
-\begin{researchquestion}{rq:2}
-How to support commencing and conducting \gls{Web Migration} with limited effort?
-\end{researchquestion}
-\begin{researchquestion}{rq:3}
-How to address concerns about risk when commencing and conducting \gls{Web Migration}?
-\end{researchquestion}
-
-These research questions were used for ideation using the \emph{\gls{hmw}} method from the \gls{hcd} design kit \autocite{HCD2015}, as described in \cref{sec:research-objectives}.
-Their \gls{hmw} re-formulation has helped to create a solution consisting of the three core contributions, as outlined in \cref{sec:introduction.contributions}.
-While \cref{rq:1,rq:2,rq:3} define the scope of this thesis, the following related research questions are considered out of its scope:
-
-\begin{itemize}
-\tightlist
-\item
-  The thesis does not consider purely technical \glspl{Transformation} between programming languages.
-While there is a large body of work available in the field of Program \gls{Transformation}, fully automatic \gls{Transformation} on the code level \autocite[cf.~family F1 in][]{Razavian2013PHD} has shown not sufficient for complex real-world systems when also a change of the basic paradigm is involved, e.g., from procedural to object-oriented \autocite{Sneed2010SoftwareMigration}, which is valid for \gls{Web Migration}.
-Instead, \gls{Reengineering} \autocite{ISO/IEEE24765Vocabulary,IEEE1219Maintenance} supported by tools and knowledge extracted from the \gls{Legacy System} is required.
-\item
-  Database Migration is a related but distinct field of research with a large body of research focusing on migration from Relational to NoSQL databases \autocite{Karnitis2015,Zhao2014a,Rocha2015RelationalNoSQL} in particular in the context of Cloud \autocite{Strauch2013}, from databases to \gls{xml}\footnote{\url{https://www.w3.org/TR/xml11/} Retrieved: 7.12.2019} \autocite{Li2014,Tzvetkov2005} and to Semantic Web \autocite{Vavliakis2013,Vavliakis2011,XuanFan2010}.
-Unlike, e.g.~changes in the user interface, these \glslink{Software Modernization}{modernizations} are not a necessary consequence or pre-requisite of \gls{Web Migration}.
-If they have to be undertaken, this should not be done at the same time as \gls{Web Migration}.
-This thesis focuses only on \glslink{Software Modernization}{modernizations} that are required by the change into a \glslink{web}{Web}-based environment.
-\item
-  This thesis does not address the \glslink{Software Modernization}{modernization} of business processes \autocite[cf.~ADM Business Domain modernization@Perez-Castillo2011KDM; and family F3 in][]{Razavian2013PHD}.
-While the thesis does address the business perspective of \gls{Web Migration} by supporting migration decision making and therefore changes in the business model, changes in business processes in order to optimize them or align them for a service-oriented architecture \autocite{Razavian2013PHD,Razavian2010SAPIENSA,Nguyen2009} are not addressed.
-Optimization of business processes represents a \glslink{Software Modernization}{modernization} that is not a consequence or pre-requisite of \gls{Web Migration} and should, therefore, be conducted separately.
-A \gls{soa} is not the specific target architecture of this thesis, and therefore business process modifications towards \gls{soa} are not addressed.
-\item
-  \gls{Technical Debt} is part of the motivation of this thesis as it constitutes an important reason why \glspl{Legacy System} need to be modernized, but this thesis does not directly address its identification \autocite{Li2015TDSMS}, estimation \autocite{Curtis2012EstimatingTD} and management \autocite{Yli-Huumo2016TD,Li2015TDSMS}.
-The methodology presented in this thesis does indirectly affect \gls{Technical Debt} in two ways.
-The knowledge recovery reduces \gls{Technical Debt} by identification and management of valuable knowledge from the \gls{Legacy System}, facilitating program understanding for maintenance and reducing the risk of changing the code.
-The \gls{Web Migration} per se introduces a change of technology towards open \Gls{web} standards replacing \glslink{Legacy System}{legacy} technology which is part of \gls{Technical Debt} \autocite{Yli-Huumo2016TD}.
-These two indirect effects are a consequence of the overlap of \gls{Web Migration} with \glslink{Software Modernization}{modernization}.
-An overview of research directly addressing \gls{Technical Debt} is given by \citet{Li2015TDSMS}.
-\end{itemize}
-
-\Cref{fig:modernization-migration} shows \gls{Web Migration}, \gls{Software Modernization}, and their relation to the above out-of-scope topics.
-
-\begin{figure}
-\hypertarget{fig:modernization-migration}{%
-\centering
-\includegraphics[width=0.75\textwidth]{../figures/modernization-migration.pdf}
-\caption{\gls{Web Migration} and Related Topics as Venn Diagram}\label{fig:modernization-migration}
-}
-\end{figure}
-
-\hypertarget{contributions}{%
-\section{Contributions}\label{sec:introduction.contributions}}
-
-To answer the research questions \cref{rq:1,rq:2,rq:3}, we define an approach for addressing the concerns about effort and risk when commencing a \gls{Web Migration} project by providing solutions that address the initial fears and resistance outlined above.
-This approach is \gls{awsm} \autocite{Heil2016AWSM}.
-\gls{awsm} provides three core contributions:
-
-\begin{itemize}
-\tightlist
-\item
-  \gls{awsm} allows to identify and maintain existing valuable knowledge through crowdsourced \gls{Concept Assignment} supported by a \glslink{web}{Web}-based annotation platform.
-\item
-  \gls{awsm} minimizes risk through migration pilots and demonstrates desirability and feasibility of a potential \glslink{web}{Web}-based version of the \gls{Legacy System} applying the \gls{Rapid Prototyping} paradigm to \gls{Web Migration}.
-\item
-  \gls{awsm} allows controlling the impact of \gls{Web Migration} on customers through analysis of visible changes caused by \gls{Web Migration} in user interfaces.
-\end{itemize}
+\textbf{Limited domain specificity}. Given situational application's peculiar characteristics, domain
+specificity plays a crucial role in guaranteeing the effectiveness of
+the final decision within a specific domain \autocite{Noran2018}.
+Domain specificity influences constructing situational applications by
+integrating domain knowledge as an essential element. The domain
+knowledge helps in assessing the solution accuracy, dependability, and
+various other quality metrics \autocite{Bryant2010}. Despite the
+mentioned benefits, the utilization of domain-specific situational tools
+faces impediments, and few numbers of research are dedicated to this
+issue. Key challenges include the developer's limited
+domain knowledge and the lack of technical skills among domain experts,
+both of which are critical for integrating knowledge graphs and
+fostering domain-specific applications \autocite{Santos2019}
+\autocite{Casati2012}. Other contributing factor includes the
+absence of standardized domain models to capture the essential
+domain-related knowledge for efficient decision making \autocite{Ponce2022}.
+This problem results in having unfamiliar situational applications with
+high learning curve. Moreover, these tools lack the accuracy required
+for domain-specific tasks. The detailed causes and effects to the
+identified problems are presented as a Problem Tree (cf. Appendix A). A
+problem tree in the context of Logical Framework Approach (LFA),
+presents the foundation for systematic and scientific procedure \autocite{EUIntegrationOffice.2011}.
 
 \vspace{-15pt}
-\hypertarget{structure-of-this-thesis}{%
-\section{Outline}\label{structure-of-this-thesis}}
+\hypertarget{sec:objectives}{%
+\section{Research Objectives}\label{sec:objectives}}
 \vspace{15pt}
 
-The rest of this thesis is organized as follows: \cref{sec:requirements-analysis} introduces a motivation scenario based on experience from a three-years industrial research project in the context of which the research presented in this thesis was conducted, and based on a systematic field research and problem analysis process, it elicits six requirements representing the thesis scope, scenario, and stakeholder characteristics.
-In \cref{sec:sota}, the state of the art in the field of \gls{Web Migration} is reviewed with regard to the requirements, and shortcomings of existing approaches are identified.
-\Cref{sec:solution} reports on the solution proposed in this thesis to address the shortcomings.
-It provides an overview of the methods, principles, and formalisms of the \gls{awsm} Methodology and tools of the \gls{awsm} Toolsuite.
-The subsequent three chapters are dedicated to the techniques and tools of the three methods of the \gls{awsm} Methodology.
-\Cref{sec:awsm-re} describes the Reverse Engineering Method based on \gls{Concept Assignment} that allows to recover and manage valuable knowledge in \glslink{Legacy System}{legacy} codebases integrated with ongoing development processes and environment and supported by \gls{Crowdsourcing}.
-\Cref{sec:awsm-rm} presents the Risk Management Method based on \gls{Rapid Prototyping}, which enables to quickly demonstrate feasibility and desirability of a \glslink{web}{Web}-based version of the \gls{Legacy System} with limited resources and \gls{Web Engineering} expertise supported by a guided \gls{Transformation} process.
-\Cref{sec:awsm-ci} provides the Customer Impact Method based on Visual User Interface Analysis that facilitates the computation of measurements estimating the perceived empirical similarity between \glslink{Legacy System}{legacy} and \Gls{web} user interface tailored to the characteristics of the target user group to control the customer impact of \gls{Web Migration}.
-The overall evaluation is reported in \cref{sec:evaluation}.
-\Cref{sec:conclusion} summarizes the contributions of this thesis and concludes with indications of further research directions.
+To derive solutions for the above-mentioned central problem, a series of research objectives is designed. The primary goal of this thesis is assisting domain experts in making situational decisions within a well-defined domain by developing a time and effort efficient composition platform. The solution should have a dedicated emphasize on usability, domain specificity and expressiveness measures. To achieve this goal, three objectives are addressed in this thesis. Each objective contributes to the overall solution by targeting usability, in the sense of providing an easy-to-use composition platform; expressiveness, by reducing the gap between domain expert’s intentions and end result; and domain specificity, with supporting domain models and domain-related customizability.
+
+\begin{researchobjective}{ro:1}
+Enable domain experts to develop an easy-to-use situational application and minimize reliance on software developers. 
+\end{researchobjective}
+
+\begin{researchobjective}{ro:2}
+Provide a natural communication channel for domain experts to express their situational intentions aligning with their domain expertise.
+\end{researchobjective}
+
+\begin{researchobjective}{ro:3}
+Facilitate the domain customizability of situational applications, allowing domain experts to address their domain-specific requirements using context aware functionalities. 
+\end{researchobjective}
+
+
+\vspace{-15pt}
+\hypertarget{contributions}{%
+\section{Contributions}\label{sec:introduction.contributions}}
+\vspace{15pt}
+
+The main contribution of this thesis is an EUD-based methodology for domain-specific situational applications. The solution is designed to assist non-technical domain experts in decision-making by enabling the efficient development of web compositions, with a dedicated focus on domain specificity. The thesis yields number of different developments to meet the aforementioned objectives:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Enabled development of useable situational decision-making
+    tools by domain experts}. This thesis presents a set of methods and
+    mechanisms to assist domain expert in decision-making process by
+    facilitating automatic \gls{api} composition and web mashups deployment
+    (cf. Chapter 5) . The tool development complies component-based and
+    goal-driven development principles and consists of multiple model
+    transformations.
+    
+\item
+  \textbf{Enabled conversational interaction mechanisms at the User
+  Interface \gls{ui} level.} \gls{disco} \autocite{Zarei2021} \autocite{Zarei2020} is the proposed tool to increase
+  expressiveness power by enabling natural language interaction during
+  component discovery and solution composition (cf. Chapter 6). DisCo
+  enhances the tool's expressiveness and usability and eliminates any
+  unnecessary learning overload since domain experts are not required to
+  follow any grammatical rules.
+  
+\item
+  \textbf{Enabled domain-specific customization} This thesis introduces
+  a mechanism, which early works introduced in \autocite{Zarei2018} \autocite{Zarei2018a}, to facilitate domain model generation
+  and domain-specific customization during both development and runtime,
+  ensuring an adequate level of domain specificity (cf. Chapter 7). It
+  includes tools for generating domain models leveraging \gls{llm} for
+  enhancing end result and integrating domain layer across various
+  levels such as components and \gls{ui}.
+\end{itemize}
+
+
+\vspace{-15pt}
+\hypertarget{sec:scope}{%
+\section{Scope}\label{sec:scope}}
+\vspace{15pt}
+
+The scope of this thesis encompasses a comprehensive study of domain-specific situational applications, with a focus on empowering domain experts in decision-making processes by addressing objectives \cref{ro:1} to \cref {ro:3}. This work primarily concentrates on the fields of Web Engineering as well as \gls{hci}, \gls{eud}, and Semantic Web. The research concludes in the development of an \gls{eud} solution to facilitate the creation of web mashups tailored to specific domains. The following research challenges are fallen outside the scope of this thesis:
+
+\begin{itemize}
+\tightlist
+\item
+  Since domain specificity is the central focus point of this thesis,
+  developing a general-purpose web mashup is not addressed by this work.
+  Although domain models and configuration tools proposed here can be
+  used either as standalone models or domain layers to adopt
+  general-purpose mashups to a specific domain, the adoption provides
+  different usage scenario that is not addressed here.
+\item
+  This thesis focuses on assisting domain experts in situational
+  decision-making by simplifying access to online data and
+  functionalities and enabling their composition. The scope of this work
+  does not include database and document management, business model
+  processing, or the provision of expert capabilities.
+\item
+  Although designing uniform and responsive \gls{ui} for
+  components is a crucial factor for enhancing the usability, the
+  responsibility lies on component developers. This thesis partially
+  tackles this issue by providing component generation and composition
+  mechanisms.
+\item
+  The focus of this thesis is on the state-of-the-art technologies;
+  therefore, we consider the \gls{api}s as the building blocks for components
+  and composition.
+\end{itemize}
+
+
+\vspace{-10pt}
+\hypertarget{structure-of-this-thesis}{%
+\section{Thesis Outline}\label{structure-of-this-thesis}}
+\vspace{15pt}
+
+The rest of this thesis is structured as follows: Chapter2 provides a comprehensive investigation into the process of identifying the central problem. To underscore the research problem's significance and relevance, a motivation scenario is designed, and key stakeholders affected by the problem are identified. This process guides the requirement elicitation for a  suitable \gls{eud} solution. Chapter3 reviews state-of-the-art research in the field of \gls{eud} with a focus on situational decision-making and domain specificity. It also introduces an assessment framework to evaluate the studied solution categories against requirements introduced in Chapter2. Chapter4 conceptualizes the domain-specific situational EUD application by designing the necessary toolkit and mechanisms to address the central problem fully. Chapters 5 through 7 address the three main research objectives. Chapter5 focuses on usability by introducing a set of methods for generating and composing components and presents the overall solution architecture. Chapter6 proposes the \gls{disco} to enhance the solution's expressiveness. DisCo uses the query expansion technique on the input to assist domain experts during the discovery and composition phases. The methods for domain-specific tool configuration such as domain model generation and implementation are presented in Chapter 7. The overall approach is evaluated in Chapter8 followed by a conclusion and points for future research direction in  Chapter9.
+
+
+\pagebreak
 
 \vspace{-15pt}
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
 \vspace{15pt}
 
-This chapter has introduced \glspl{Web System} in general and \glspl{Web Application} in particular as widely used and accepted software solutions due to their advantages over traditional desktop software.
-It motivated the thesis by showing that any \glslink{Software Modernization}{modernization} of existing \glspl{Legacy System} is hard due to their specific characteristics.
-In spite of the notion that \gls{Web Migration} is sufficiently addressed in academia, many \glspl{isv} are still struggling to commence \gls{Web Migration} due to concerns about effort and risk, and dedicated approaches addressing these concerns in the initial phases of \gls{Web Migration} are scarce.
-From this, the central research question \cref{rq:1} of this thesis, ``How to support \glspl{isv} to commence \gls{Web Migration}?'', was derived and detailed in \cref{rq:2} and \cref{rq:3}, defining the scope of this thesis.
-The chapter provided an outline of the main research contributions and the structure of the thesis.
-The following chapter further explores the defined problem domain through analysis of a motivation scenario and elicitation of requirements for a suitable \gls{Web Migration} approach addressing the research questions.
+This chapter sets the groundwork for this thesis by providing a comprehensive overview of the research context in the field of \gls{eud}, with an emphasize on the domain specificity of situational applications. The central problem and contributing subproblems are identified and the research objectives were aligned accordingly. Three subproblems each affecting the central problem by targeting usability, expressiveness, and domain specificity. The following chapter further explores the central problem by examining a motivation scenario and extracting requirements for domain-specific situational application tool. 

@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Page-1" id="MyYKJ3n-8grOC0BuLQyX">
+    <mxGraphModel dx="794" dy="452" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-24" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E9EBF5;shadow=0;strokeColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry y="250" width="840" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-25" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry y="340" width="840" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-26" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E9EBF5;strokeColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry y="430" width="840" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-1" value="&lt;font face=&quot;Garamond&quot; style=&quot;font-size: 16px;&quot;&gt;Evolution Phase&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="454" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-2" value="&lt;font face=&quot;Garamond&quot; style=&quot;font-size: 16px;&quot;&gt;Initial Phase&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="294" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-3" value="&lt;span style=&quot;font-family: Garamond; font-size: 16px;&quot;&gt;Conversational-based Discovery and Composition&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="534" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-5" value="&lt;span style=&quot;font-family: Garamond; font-size: 16px;&quot;&gt;Model-driven Composition Development&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="234" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-6" value="&lt;span style=&quot;font-family: Garamond; font-size: 16px;&quot;&gt;Solution Designer&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="684" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-7" value="&lt;span style=&quot;font-family: Garamond; font-size: 16px;&quot;&gt;DisCo&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="534" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-8" value="&lt;font face=&quot;Garamond&quot; size=&quot;3&quot;&gt;Domain Analyser&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="384" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-9" value="&lt;span style=&quot;font-family: Garamond; font-size: medium;&quot;&gt;DSAC Composer&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="234" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-10" value="&lt;span style=&quot;font-family: Garamond; font-size: 16px;&quot;&gt;Component Generator&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="84" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-11" value="&lt;font face=&quot;Garamond&quot; style=&quot;font-size: 16px;&quot;&gt;Ontology-based Platform Development&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="384" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-13" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="QtcoBnL1V9OU7mnkHah0-5" target="QtcoBnL1V9OU7mnkHah0-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="450" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-15" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="QtcoBnL1V9OU7mnkHah0-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="450" as="sourcePoint" />
+            <mxPoint x="294" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-16" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="QtcoBnL1V9OU7mnkHah0-11" target="QtcoBnL1V9OU7mnkHah0-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="450" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-17" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="QtcoBnL1V9OU7mnkHah0-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="594" y="440" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-19" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="QtcoBnL1V9OU7mnkHah0-6" target="QtcoBnL1V9OU7mnkHah0-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="450" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-21" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="QtcoBnL1V9OU7mnkHah0-2" target="QtcoBnL1V9OU7mnkHah0-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="450" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-22" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" target="QtcoBnL1V9OU7mnkHah0-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="354" y="340" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-23" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="QtcoBnL1V9OU7mnkHah0-1" target="QtcoBnL1V9OU7mnkHah0-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="450" as="sourcePoint" />
+            <mxPoint x="474" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-27" value="&lt;font face=&quot;Garamond&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Phases&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-28" value="&lt;font face=&quot;Garamond&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Methods&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="370" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QtcoBnL1V9OU7mnkHah0-29" value="&lt;font face=&quot;Garamond&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Tools&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="465" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

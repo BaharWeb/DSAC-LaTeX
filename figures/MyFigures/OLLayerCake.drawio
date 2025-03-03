@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" version="24.7.6">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1434" dy="453" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-0" value="Synonyms" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="850" width="236" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-1" value="Terms" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="890" width="266" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-2" value="Concepts" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="810" width="216" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-3" value="Concept Hierarchy" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="770" width="196" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-4" value="Relations" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="730" width="176" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-5" value="Relation Hierarchy" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="690" width="156" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-6" value="Axiom Schemata" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="650" width="136" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkGPu0e_TaRV-qnB0zhB-7" value="General Axioms" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Garamond;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="284" y="610" width="116" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

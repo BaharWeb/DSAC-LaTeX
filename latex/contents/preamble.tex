@@ -221,8 +221,8 @@
 \crefname{sebprictr}{}{}
 
 \newcounter{sebsreqctr}
-\renewcommand{\thesebsreqctr}{S\arabic{sebsreqctr}}
-\newenvironment{thesisscoperequirement}[2]{%
+\renewcommand{\thesebsreqctr}{PR\arabic{sebsreqctr}}
+\newenvironment{thesisdprequirement}[2]{%
   \refstepcounter{sebsreqctr}% increment the environment's counter
   \hypertarget{#2}{%
     \subsubsection*{\thesebsreqctr\@\xspace #1}\label{#2}}%
@@ -231,8 +231,8 @@
 \crefname{sebsreqctr}{}{}
 
 \newcounter{sebcreqctr}
-\renewcommand{\thesebcreqctr}{C\arabic{sebcreqctr}}
-\newenvironment{thesisstakeholderrequirement}[2]{%
+\renewcommand{\thesebcreqctr}{TR\arabic{sebcreqctr}}
+\newenvironment{thesistoolrequirement}[2]{%
   \refstepcounter{sebcreqctr}% increment the environment's counter
   \hypertarget{#2}{%
     \subsubsection*{\thesebcreqctr\@\xspace #1}\label{#2}}%
